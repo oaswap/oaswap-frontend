@@ -1,0 +1,62 @@
+{
+  "name": "Oaswap Default List",
+  "timestamp": "2022-01-08T00:00:00Z",
+  "version": {
+    "major": 2,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://oaswap.xyz/logo.png",
+  "keywords": ["oaswap", "default"],
+  "tokens": [
+    {
+      "name": "WROSE Token",
+      "symbol": "WROSE",
+      "address": "0xc778417E063141139Fce010982780140Aa0cD5Ab",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://secureservercdn.net/160.153.137.210/mbu.abb.myftpupload.com/wp-content/uploads/2021/07/52803776.png"
+    },
+    {
+      "name": "Oaswap Token",
+      "symbol": "OAS",
+      "address": "0xDfd7c87F6a44E3d7cb2aAf16825e21D6d5F05817",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82.png"
+    },
+    {
+      "name": "Pink Token",
+      "symbol": "PINK",
+      "address": "0x8EfEd38ec6b6d96FDE4D4AcfFe5b2B512E70BC39",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x1796ae0b0fa4862485106a0de9b654eFE301D0b2.png"
+    },
+    {
+      "name": "Blue Token",
+      "symbol": "BLUE",
+      "address": "0xeB328Cb80d785cB145010fA4e5920358cB713464",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x14016E85a25aeb13065688cAFB43044C2ef86784.png"
+    },
+    {
+      "name": "Green Token",
+      "symbol": "GREEN",
+      "address": "0xE59a806D0c9D880cEa992EB139369fe5f0dE9d7D",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x1203355742e76875154C0D13eB81DCD7711dC7d9.png"
+    },
+    {
+      "name": "Red Token",
+      "symbol": "RED",
+      "address": "0xC7152629FF44A56f7f0dC6E2a82D4cF405ECeA9B",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x0a3A21356793B49154Fd3BbE91CBc2A16c0457f5.png"
+    }
+  ]
+}

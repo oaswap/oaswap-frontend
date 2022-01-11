@@ -1,0 +1,30 @@
+{
+  "name": "Oaswap Default List",
+  "timestamp": "2022-01-08T00:00:00Z",
+  "version": {
+    "major": 2,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://oaswap.xyz/logo.png",
+  "keywords": ["oaswap", "default"],
+  "tokens": [
+    {
+      "name": "WETH Token",
+      "symbol": "WETH",
+      "address": "0xDf032Bc4B9dC2782Bb09352007D4C57B75160B15",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+    },
+    {
+      "name": "Oaswap Token",
+      "symbol": "OAS",
+      "address": "0x1688c6cb7f48130bf3Da48D9fe94907578b9ef41",
+      "chainId": 4,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82.png"
+    }
+  ]
+}
