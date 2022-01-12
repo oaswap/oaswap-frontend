@@ -128,7 +128,7 @@ export default function AddLiquidity({
 
   const addTransaction = useTransactionAdder()
 
-  async function onAdd() {
+  const onAdd = useCallback(async () => {
     if (!chainId || !library || !account) return
     const router = getRouterContract(chainId, library, account)
 
@@ -201,7 +201,20 @@ export default function AddLiquidity({
           console.error(err)
         }
       })
-  }
+  }, [
+    account,
+    addTransaction,
+    allowedSlippage,
+    chainId,
+    currencies,
+    currencyA,
+    currencyB,
+    deadline,
+    gasPrice,
+    library,
+    noLiquidity,
+    parsedAmounts,
+  ])
 
   const modalHeader = () => {
     return noLiquidity ? (
