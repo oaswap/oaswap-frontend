@@ -44,6 +44,7 @@ const CurvedDivider: React.FC<CurvedDividerProps> = ({
   concave,
   clipFill,
   dividerFill,
+  svgFill,
 }) => {
   const showConvexTop = dividerPosition === 'top' && !concave
   const showConvexBottom = dividerPosition === 'bottom' && !concave
