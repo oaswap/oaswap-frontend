@@ -41,7 +41,8 @@ const Footer: React.FC<{ variant?: FooterVariant }> = ({ variant = 'default' }) 
   const { t } = useTranslation()
   const isSide = variant === 'side'
   return (
-    <Wrapper $isSide={isSide}>
+    <>
+      {/* <Wrapper $isSide={isSide}>
       <Flex flexDirection={isSide ? 'column' : ['column', 'column', 'row']} alignItems="center">
         <ButtonMenu variant="subtle" scale="sm" activeIndex={0}>
           <ButtonMenuItem>V2</ButtonMenuItem>
@@ -82,7 +83,8 @@ const Footer: React.FC<{ variant?: FooterVariant }> = ({ variant = 'default' }) 
         </BubbleWrapper>
         <Image src="/images/help.svg" alt="Get some help" width={160} height={108} />
       </Flex>
-    </Wrapper>
+    </Wrapper> */}
+    </>
   )
 }
 
