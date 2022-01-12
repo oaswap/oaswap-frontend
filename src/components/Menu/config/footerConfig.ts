@@ -7,32 +7,32 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: t('Contact'),
-        href: 'https://docs.pancakeswap.finance/contact-us',
+        href: 'https://docs.oaswap.xyz/contact-us',
       },
-      {
-        label: t('Brand'),
-        href: 'https://docs.pancakeswap.finance/brand',
-      },
+      // {
+      //   label: t('Brand'),
+      //   href: 'https://docs.oaswap.xyz/brand',
+      // },
       {
         label: t('Blog'),
-        href: 'https://medium.com/pancakeswap',
+        href: 'https://medium.com/oaswap',
       },
       {
         label: t('Community'),
-        href: 'https://docs.pancakeswap.finance/contact-us/telegram',
+        href: 'https://docs.oaswap.xyz/contact-us/telegram',
       },
       {
-        label: t('CAKE token'),
-        href: 'https://docs.pancakeswap.finance/tokenomics/cake',
+        label: t('OAS Token'),
+        href: 'https://docs.oaswap.xyz/tokenomics/cake',
       },
-      {
-        label: '—',
-      },
-      {
-        label: t('Online Store'),
-        href: 'https://pancakeswap.creator-spring.com/',
-        isHighlighted: true,
-      },
+      // {
+      //   label: '—',
+      // },
+      // {
+      //   label: t('Online Store'),
+      //   href: 'https://oaswap.creator-spring.com/',
+      //   isHighlighted: true,
+      // },
     ],
   },
   {
@@ -40,15 +40,15 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: t('Customer Support'),
-        href: 'https://docs.pancakeswap.finance/contact-us/customer-support',
+        href: 'https://docs.oaswap.xyz/contact-us/customer-support',
       },
       {
         label: t('Troubleshooting'),
-        href: 'https://docs.pancakeswap.finance/help/troubleshooting',
+        href: 'https://docs.oaswap.xyz/help/troubleshooting',
       },
       {
         label: t('Guides'),
-        href: 'https://docs.pancakeswap.finance/get-started',
+        href: 'https://docs.oaswap.xyz/get-started',
       },
     ],
   },
@@ -57,24 +57,24 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/pancakeswap',
+        href: 'https://github.com/oaswap',
       },
       {
         label: t('Documentation'),
-        href: 'https://docs.pancakeswap.finance',
+        href: 'https://docs.oaswap.xyz',
       },
-      {
-        label: t('Bug Bounty'),
-        href: 'https://docs.pancakeswap.finance/code/bug-bounty',
-      },
+      // {
+      //   label: t('Bug Bounty'),
+      //   href: 'https://docs.oaswap.xyz/code/bug-bounty',
+      // },
       {
         label: t('Audits'),
-        href: 'https://docs.pancakeswap.finance/help/faq#is-pancakeswap-safe-has-pancakeswap-been-audited',
+        href: 'https://docs.oaswap.xyz/help/faq#is-oaswap-safe-has-oaswap-been-audited',
       },
-      {
-        label: t('Careers'),
-        href: 'https://docs.pancakeswap.finance/hiring/become-a-chef',
-      },
+      // {
+      //   label: t('Careers'),
+      //   href: 'https://docs.oaswap.xyz/hiring/become-a-chef',
+      // },
     ],
   },
 ]

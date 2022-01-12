@@ -130,6 +130,7 @@ const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({ o
       logError(error)
       toastError(
         t('Error'),
+        // @ts-ignore
         error?.data?.message || t('Please try again. Confirm the transaction and make sure you are paying enough gas!'),
       )
     } finally {

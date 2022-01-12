@@ -77,6 +77,7 @@ const ProfileHeader: React.FC<HeaderProps> = ({
         // TODO: Share functionality once user profiles routed by ID
         <Flex display="inline-flex">
           {accountPath && (
+            // @ts-ignore
             <StyledIconButton
               target="_blank"
               as="a"

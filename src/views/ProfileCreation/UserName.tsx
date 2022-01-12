@@ -114,6 +114,7 @@ const UserName: React.FC = () => {
         }
       } catch (e) {
         setIsValid(false)
+        // @ts-ignore
         if (e.name !== 'AbortError') {
           setMessage(t('Error fetching data'))
           console.error(e)
@@ -162,6 +163,7 @@ const UserName: React.FC = () => {
         toastError(t('Error'), data?.error?.message)
       }
     } catch (error) {
+      // @ts-ignore
       toastError(error?.message ? error.message : JSON.stringify(error))
     } finally {
       setIsLoading(false)
