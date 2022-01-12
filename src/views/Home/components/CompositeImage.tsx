@@ -84,7 +84,7 @@ export const getSrcSet = (base: string, imageSrc: string, extension = '.png') =>
   ${getImageUrl(base, imageSrc, Resolution.LG, extension)} 1024w,`
 }
 
-const CompositeImage: React.FC<ComponentProps> = ({ path, attributes, maxHeight = '512px' }) => {
+const CompositeImage: React.FC<ComponentProps> = ({ path, attributes, maxHeight = '512px', animate }) => {
   return (
     <Wrapper maxHeight={maxHeight}>
       <picture>

@@ -22,7 +22,7 @@ const ExpandableButtonWrapper = styled(Flex)`
   }
 `
 
-const Footer: React.FC<FooterProps> = ({ pool, account, defaultExpanded }) => {
+const Footer: React.FC<FooterProps> = ({ pool, account, defaultExpanded, totalCakeInVault }) => {
   const { vaultKey } = pool
   const { t } = useTranslation()
   const [isExpanded, setIsExpanded] = useState(defaultExpanded || false)
