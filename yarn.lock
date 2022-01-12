@@ -2168,10 +2168,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@oaswap/sdk@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@oaswap/sdk/-/sdk-1.0.5.tgz#108ed97b9e3fe6e9cc937bdf8195649fe926d8ad"
-  integrity sha512-X2RVle/M0entXvCxIeKN4b1VVRtoiGC8fDR7o0/32JIX30BK1pcmaszGhZDK6LsE+vbRsoQw37BqxfOPDg3z1Q==
+"@oaswap/sdk@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@oaswap/sdk/-/sdk-1.0.6.tgz#c9b037396e3f3a0b7634ffb5a96b1ecc5f1beef7"
+  integrity sha512-K/4CblPtBKC9iO9SR6+AJ45+Chmgc4+v/vA+0M8C7oE3B5LGONduxB2O5fMkC5H2TTyFBhNHZzGKvHRXuzMSmg==
   dependencies:
     "@pancakeswap-libs/pancake-swap-core" "^0.1.0"
     big.js "^5.2.2"

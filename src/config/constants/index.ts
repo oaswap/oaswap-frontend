@@ -1,7 +1,7 @@
 import { ChainId, JSBI, Percent, Token } from '@oaswap/sdk'
 import { mainnetTokens, testnetTokens } from './tokens'
 
-export const ROUTER_ADDRESS = '0x8e586c55B41fb9D96beA103B13693717AE76374D'
+export const ROUTER_ADDRESS = '0xFB5F908719a8926D1920011D232B434928B14468'
 
 // a list of tokens by chain
 type ChainTokenList = {
