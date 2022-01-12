@@ -41,7 +41,8 @@ import { VaultKey } from 'state/types'
 import { Contract } from '@ethersproject/contracts'
 // import { ChainId, WETH } from '@oaswap/sdk'
 import { ChainId, WETH } from '@oaswap/sdk'
-import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
+// import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
+import IUniswapV2Pair from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import ENS_PUBLIC_RESOLVER_ABI from '../config/abi/ens-public-resolver.json'
 import ENS_ABI from '../config/abi/ens-registrar.json'
 import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
@@ -298,6 +299,7 @@ export function useBytes32TokenContract(tokenAddress?: string, withSignerIfPossi
 }
 
 export function usePairContract(pairAddress?: string, withSignerIfPossible?: boolean): Contract | null {
+  const IUniswapV2PairABI = IUniswapV2Pair.abi
   return useContract(pairAddress, IUniswapV2PairABI, withSignerIfPossible)
 }
 
