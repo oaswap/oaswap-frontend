@@ -25,7 +25,7 @@ export const mainnetTokens = defineTokens({
     18,
     'OAS',
     'Oaswap Token',
-    'https://oaswap.xyz/',
+    'https://oaswap.finance/',
   ),
   wbnb: new Token(
     MAINNET,
@@ -1967,7 +1967,7 @@ export const testnetTokens = defineTokens({
     18,
     'OAS',
     'Oaswap Token',
-    'https://oaswap.xyz/',
+    'https://oaswap.finance/',
   ),
   wbnb: new Token(
     TESTNET,

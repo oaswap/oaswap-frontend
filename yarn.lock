@@ -2168,10 +2168,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@oaswap/sdk@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@oaswap/sdk/-/sdk-1.0.6.tgz#c9b037396e3f3a0b7634ffb5a96b1ecc5f1beef7"
-  integrity sha512-K/4CblPtBKC9iO9SR6+AJ45+Chmgc4+v/vA+0M8C7oE3B5LGONduxB2O5fMkC5H2TTyFBhNHZzGKvHRXuzMSmg==
+"@oaswap/sdk@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@oaswap/sdk/-/sdk-1.0.7.tgz#319650f696bc2e2f0b341dbae07bdf82f49bde69"
+  integrity sha512-4a30SIB7EVYm0ItppGPRSWS9OOHDWFhzDHDZFUGhJN/CedjRKAsvTosZn5T1OHQwxFdPD2y0fqIsRBCQpk9frw==
   dependencies:
     "@pancakeswap-libs/pancake-swap-core" "^0.1.0"
     big.js "^5.2.2"
@@ -2181,10 +2181,10 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@oaswap/uikit@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@oaswap/uikit/-/uikit-0.16.0.tgz#312d6e3739f77c4b2b35bf8f477df3b41aaa88a3"
-  integrity sha512-W9COE6jV5fVGNJBNzVBBmXT/l7btvcQuweeFDoHnxmcAAvM1wbv8OVXaUTHKwt9x0OmIOo5X0FgkTehqv4Rw0g==
+"@oaswap/uikit@^0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@oaswap/uikit/-/uikit-0.17.0.tgz#1c192d02d959ef5fa4b927ddc40655e06ec3c7e3"
+  integrity sha512-uewkNhF811r2nnCu9m9HV/c3GCZxIhC08cw5S8mOfTsfgXeZTznGnCiPFkNGy5sej2usrVFAflXBsdWgkOtp/Q==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"

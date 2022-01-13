@@ -7,11 +7,11 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: t('Contact'),
-        href: 'https://docs.oaswap.xyz/contact-us',
+        href: 'https://docs.oaswap.finance/contact-us',
       },
       // {
       //   label: t('Brand'),
-      //   href: 'https://docs.oaswap.xyz/brand',
+      //   href: 'https://docs.oaswap.finance/brand',
       // },
       {
         label: t('Blog'),
@@ -19,11 +19,11 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
       },
       {
         label: t('Community'),
-        href: 'https://docs.oaswap.xyz/contact-us/telegram',
+        href: 'https://docs.oaswap.finance/contact-us/telegram',
       },
       {
         label: t('OAS Token'),
-        href: 'https://docs.oaswap.xyz/tokenomics/cake',
+        href: 'https://docs.oaswap.finance/tokenomics/cake',
       },
       // {
       //   label: '—',
@@ -40,15 +40,15 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: t('Customer Support'),
-        href: 'https://docs.oaswap.xyz/contact-us/customer-support',
+        href: 'https://docs.oaswap.finance/contact-us/customer-support',
       },
       {
         label: t('Troubleshooting'),
-        href: 'https://docs.oaswap.xyz/help/troubleshooting',
+        href: 'https://docs.oaswap.finance/help/troubleshooting',
       },
       {
         label: t('Guides'),
-        href: 'https://docs.oaswap.xyz/get-started',
+        href: 'https://docs.oaswap.finance/get-started',
       },
     ],
   },
@@ -61,19 +61,19 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
       },
       {
         label: t('Documentation'),
-        href: 'https://docs.oaswap.xyz',
+        href: 'https://docs.oaswap.finance',
       },
       // {
       //   label: t('Bug Bounty'),
-      //   href: 'https://docs.oaswap.xyz/code/bug-bounty',
+      //   href: 'https://docs.oaswap.finance/code/bug-bounty',
       // },
       {
         label: t('Audits'),
-        href: 'https://docs.oaswap.xyz/help/faq#is-oaswap-safe-has-oaswap-been-audited',
+        href: 'https://docs.oaswap.finance/help/faq#is-oaswap-safe-has-oaswap-been-audited',
       },
       // {
       //   label: t('Careers'),
-      //   href: 'https://docs.oaswap.xyz/hiring/become-a-chef',
+      //   href: 'https://docs.oaswap.finance/hiring/become-a-chef',
       // },
     ],
   },

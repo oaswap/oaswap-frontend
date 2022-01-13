@@ -109,7 +109,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       },
       {
         label: t('Docs'),
-        href: 'https://docs.oaswap.xyz',
+        href: 'https://docs.oaswap.finance',
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],
