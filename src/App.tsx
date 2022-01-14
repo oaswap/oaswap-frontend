@@ -184,7 +184,7 @@ const App: React.FC = () => {
           </Switch>
         </SuspenseWithChunkError>
       </Menu>
-      <EasterEgg iterations={2} />
+      {/* <EasterEgg iterations={2} /> */}
       <ToastListener />
       <SubgraphHealthIndicator />
     </Router>

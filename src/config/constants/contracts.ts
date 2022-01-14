@@ -2,6 +2,7 @@ export default {
   masterChef: {
     4: '0xbaF4f9779fd6EcF8cE7EB4AffD563B758b083b5f',
     56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+    42262: '0xbaF4f9779fd6EcF8cE7EB4AffD563B758b083b5f', // Needs update
   },
   sousChef: {
     4: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
@@ -10,6 +11,7 @@ export default {
   lotteryV2: {
     4: '0x5790c3534F30437641541a0FA04C992799602998',
     56: '0x5aF6D33DE2ccEC94efb1bDF8f92Bd58085432d2c',
+    42262: '0x5790c3534F30437641541a0FA04C992799602998', // Needs update
   },
   multiCall: {
     56: '0xfF6FD90A470Aaa0c1B8A54681746b07AcdFedc9B',
@@ -18,6 +20,7 @@ export default {
   pancakeProfile: {
     56: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a',
     4: '0x4B683C7E13B6d5D7fd1FeA9530F451954c1A7c8A',
+    42262: '0x4B683C7E13B6d5D7fd1FeA9530F451954c1A7c8A', // Needs update
   },
   pancakeRabbits: {
     56: '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07',
@@ -54,6 +57,7 @@ export default {
   cakeVault: {
     56: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC',
     4: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC',
+    42262: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC', // Needs update
   },
   ifoPool: {
     56: '0x1B2A2f6ed4A1401E8C73B4c2B6172455ce2f78E8',

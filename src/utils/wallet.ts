@@ -17,10 +17,10 @@ export const setupNetwork = async () => {
         params: [
           {
             chainId: `0x${chainId.toString(16)}`,
-            chainName: 'Binance Smart Chain Mainnet',
+            chainName: 'Oasis Emerald',
             nativeCurrency: {
-              name: 'BNB',
-              symbol: 'bnb',
+              name: 'ROSE',
+              symbol: 'rose',
               decimals: 18,
             },
             rpcUrls: nodes,
@@ -34,7 +34,7 @@ export const setupNetwork = async () => {
       return false
     }
   } else {
-    console.error("Can't setup the BSC network on metamask because window.ethereum is undefined")
+    console.error("Can't setup the Oasis network on metamask because window.ethereum is undefined")
     return false
   }
 }
