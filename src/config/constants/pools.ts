@@ -35,6 +35,7 @@ const pools: SerializedPoolConfig[] = [
     contractAddress: {
       4: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
       56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+      42262: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a', // Needs update
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
