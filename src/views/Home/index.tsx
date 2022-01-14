@@ -17,6 +17,7 @@ import Hero from './components/Hero'
 // import { WedgeTopLeft, InnerWedgeWrapper, OuterWedgeWrapper, WedgeTopRight } from './components/WedgeSvgs'
 // import UserBanner from './components/UserBanner'
 import FarmAuctionsBanner from './components/Banners/FarmAuctionsBanner'
+import FairLaunchBanner from './components/Banners/FairLaunchBanner'
 
 const showBanner = false
 
@@ -28,7 +29,7 @@ const HomeBanner = ({ account }: { account: string }) => {
   return (
     <Flex
       pt={[account ? '220px' : '0', null, null, account ? '76px' : '0']}
-      mt={[account ? '0' : '-16px', null, null, account ? '0' : '-48px']}
+      mt={['-16px', null, null, '-48px']}
       pb="24px"
     >
       <FarmAuctionsBanner />
@@ -79,6 +80,10 @@ const Home: React.FC = () => {
         index={2}
         hasCurvedDivider={false}
       >
+        <Flex pt={['0', null, null, '0']} mt={['-16px', null, null, '-48px']} pb="24px">
+          <FairLaunchBanner />
+        </Flex>
+
         {/* {account && (
           <UserBannerWrapper>
             <UserBanner />

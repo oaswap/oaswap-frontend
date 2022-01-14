@@ -110,7 +110,7 @@ const Hero = () => {
         mt={[account ? '280px' : '50px', null, 0]}
         id="homepage-hero"
       >
-        <Flex flex="1" flexDirection="column">
+        <Flex flex="1" flexDirection="column" style={{ zIndex: 1 }}>
           <Heading scale="xxl" color="secondary" mb="24px">
             {t('Decentralized trading on Oasis.')}
           </Heading>
