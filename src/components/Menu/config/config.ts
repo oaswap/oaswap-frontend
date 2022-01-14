@@ -104,7 +104,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       // },
       {
         label: t('Blog'),
-        href: 'https://medium.com/oaswap',
+        href: 'https://oaswap.medium.com',
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {

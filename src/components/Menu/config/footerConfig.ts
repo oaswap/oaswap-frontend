@@ -7,7 +7,7 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: t('Contact'),
-        href: 'https://docs.oaswap.finance/contact-us',
+        href: 'https://docs.oaswap.finance/links',
       },
       // {
       //   label: t('Brand'),
@@ -15,15 +15,15 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
       // },
       {
         label: t('Blog'),
-        href: 'https://medium.com/oaswap',
+        href: 'https://oaswap.medium.com',
       },
       {
         label: t('Community'),
-        href: 'https://docs.oaswap.finance/contact-us/telegram',
+        href: 'https://docs.oaswap.finance/links',
       },
       {
         label: t('OAS Token'),
-        href: 'https://docs.oaswap.finance/tokenomics/cake',
+        href: 'https://docs.oaswap.finance/tokenomics/the-oas-token',
       },
       // {
       //   label: '—',
@@ -40,15 +40,15 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     items: [
       {
         label: t('Customer Support'),
-        href: 'https://docs.oaswap.finance/contact-us/customer-support',
+        href: 'https://docs.oaswap.finance/links',
       },
       {
         label: t('Troubleshooting'),
-        href: 'https://docs.oaswap.finance/help/troubleshooting',
+        href: 'https://docs.oaswap.finance',
       },
       {
         label: t('Guides'),
-        href: 'https://docs.oaswap.finance/get-started',
+        href: 'https://docs.oaswap.finance',
       },
     ],
   },
@@ -68,8 +68,8 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
       //   href: 'https://docs.oaswap.finance/code/bug-bounty',
       // },
       {
-        label: t('Audits'),
-        href: 'https://docs.oaswap.finance/help/faq#is-oaswap-safe-has-oaswap-been-audited',
+        label: t('Audits (Coming Soon)'),
+        href: 'https://docs.oaswap.finance',
       },
       // {
       //   label: t('Careers'),
