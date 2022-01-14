@@ -12,6 +12,7 @@ export type TranslatableText =
 export interface Address {
   4?: string
   56: string
+  42262?: string
 }
 
 export interface SerializedToken {
