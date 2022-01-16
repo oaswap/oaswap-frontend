@@ -2168,10 +2168,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@oaswap/sdk@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@oaswap/sdk/-/sdk-1.0.7.tgz#319650f696bc2e2f0b341dbae07bdf82f49bde69"
-  integrity sha512-4a30SIB7EVYm0ItppGPRSWS9OOHDWFhzDHDZFUGhJN/CedjRKAsvTosZn5T1OHQwxFdPD2y0fqIsRBCQpk9frw==
+"@oaswap/sdk@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@oaswap/sdk/-/sdk-1.0.8.tgz#c41a58a05c3e70dc40f536486d3b2f46d6bce650"
+  integrity sha512-N8TpOcjYWUwkfalkVYtUrST+8WImBub4DXDOOdxNDSjmGXb/Nk8BcGyMu4WGpgWfBryBFC7zZTQHfp4z3EBEUw==
   dependencies:
     "@pancakeswap-libs/pancake-swap-core" "^0.1.0"
     big.js "^5.2.2"
@@ -8786,7 +8786,7 @@ ethers@^4.0.32:
     uuid "2.0.1"
     xmlhttprequest "1.8.0"
 
-ethers@^5.5.0, ethers@^5.5.2:
+ethers@^5.5.0, ethers@^5.5.3:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.5.3.tgz#1e361516711c0c3244b6210e7e3ecabf0c75fca0"
   integrity sha512-fTT4WT8/hTe/BLwRUtl7I5zlpF3XC3P/Xwqxc5AIP2HGlH15qpmjs0Ou78az93b1rLITzXLFxoNX63B8ZbUd7g==
