@@ -7,7 +7,7 @@
     "patch": 0
   },
   "tags": {},
-  "logoURI": "https://oaswap.xyz/logo.png",
+  "logoURI": "https://oaswap.finance/logo.png",
   "keywords": ["oaswap", "default"],
   "tokens": [
     {
@@ -25,38 +25,6 @@
       "chainId": 4,
       "decimals": 18,
       "logoURI": "https://pancakeswap.finance/images/tokens/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82.png"
-    },
-    {
-      "name": "Pink Token",
-      "symbol": "PINK",
-      "address": "0x8EfEd38ec6b6d96FDE4D4AcfFe5b2B512E70BC39",
-      "chainId": 4,
-      "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x1796ae0b0fa4862485106a0de9b654eFE301D0b2.png"
-    },
-    {
-      "name": "Blue Token",
-      "symbol": "BLUE",
-      "address": "0xeB328Cb80d785cB145010fA4e5920358cB713464",
-      "chainId": 4,
-      "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x14016E85a25aeb13065688cAFB43044C2ef86784.png"
-    },
-    {
-      "name": "Green Token",
-      "symbol": "GREEN",
-      "address": "0xE59a806D0c9D880cEa992EB139369fe5f0dE9d7D",
-      "chainId": 4,
-      "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x1203355742e76875154C0D13eB81DCD7711dC7d9.png"
-    },
-    {
-      "name": "Red Token",
-      "symbol": "RED",
-      "address": "0xC7152629FF44A56f7f0dC6E2a82D4cF405ECeA9B",
-      "chainId": 4,
-      "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x0a3A21356793B49154Fd3BbE91CBc2A16c0457f5.png"
     }
   ]
 }
