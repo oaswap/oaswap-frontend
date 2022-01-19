@@ -113,7 +113,7 @@ export default function RemoveLiquidity({
       { name: 'verifyingContract', type: 'address' },
     ]
     const domain = {
-      name: 'Oaswap LPs',
+      name: 'Oaswap LP Token',
       version: '1',
       chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -542,15 +542,15 @@ export default function RemoveLiquidity({
                             currencyB === ETHER ? WETH[chainId].address : currencyIdB
                           }`}
                         >
-                          {t('Receive WBNB')}
+                          {t('Receive WROSE')}
                         </StyledInternalLink>
                       ) : oneCurrencyIsWETH ? (
                         <StyledInternalLink
-                          to={`/remove/${currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'BNB' : currencyIdA}/${
-                            currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'BNB' : currencyIdB
-                          }`}
+                          to={`/remove/${
+                            currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ROSE' : currencyIdA
+                          }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ROSE' : currencyIdB}`}
                         >
-                          {t('Receive BNB')}
+                          {t('Receive ROSE')}
                         </StyledInternalLink>
                       ) : null}
                     </RowBetween>
