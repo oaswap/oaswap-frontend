@@ -11,20 +11,20 @@
   "keywords": ["oaswap", "default"],
   "tokens": [
     {
-      "name": "WROSE Token",
+      "name": "Wrapped ROSE Token",
       "symbol": "WROSE",
-      "address": "0xc778417E063141139Fce010982780140Aa0cD5Ab",
-      "chainId": 4,
+      "address": "0x21C718C22D52d0F3a789b752D4c2fD5908a8A733",
+      "chainId": 42262,
       "decimals": 18,
       "logoURI": "https://secureservercdn.net/160.153.137.210/mbu.abb.myftpupload.com/wp-content/uploads/2021/07/52803776.png"
     },
     {
       "name": "Oaswap Token",
       "symbol": "OAS",
-      "address": "0xDfd7c87F6a44E3d7cb2aAf16825e21D6d5F05817",
-      "chainId": 4,
+      "address": "0xCF4BF33985fF6421Ac1a0472Dd6f2ed565Df4c85",
+      "chainId": 42262,
       "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82.png"
+      "logoURI": "https://oaswap.finance/images/tokens/0xDfd7c87F6a44E3d7cb2aAf16825e21D6d5F05817.png"
     }
   ]
 }

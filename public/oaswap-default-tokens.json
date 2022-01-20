@@ -11,20 +11,20 @@
   "keywords": ["oaswap", "default"],
   "tokens": [
     {
-      "name": "WETH Token",
-      "symbol": "WETH",
-      "address": "0xDf032Bc4B9dC2782Bb09352007D4C57B75160B15",
-      "chainId": 4,
+      "name": "Wrapped ROSE Token",
+      "symbol": "WROSE",
+      "address": "0x21C718C22D52d0F3a789b752D4c2fD5908a8A733",
+      "chainId": 42262,
       "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
+      "logoURI": "https://secureservercdn.net/160.153.137.210/mbu.abb.myftpupload.com/wp-content/uploads/2021/07/52803776.png"
     },
     {
       "name": "Oaswap Token",
       "symbol": "OAS",
-      "address": "0x1688c6cb7f48130bf3Da48D9fe94907578b9ef41",
-      "chainId": 4,
+      "address": "0xCF4BF33985fF6421Ac1a0472Dd6f2ed565Df4c85",
+      "chainId": 42262,
       "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82.png"
+      "logoURI": "https://oaswap.finance/images/tokens/0xDfd7c87F6a44E3d7cb2aAf16825e21D6d5F05817.png"
     }
   ]
 }
