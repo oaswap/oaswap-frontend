@@ -5,7 +5,8 @@ import { get } from 'lodash'
 import * as Sentry from '@sentry/react'
 
 export function useCallWithGasPrice() {
-  const gasPrice = useGasPrice()
+  // const gasPrice = useGasPrice()
+  const gasPrice = '10000000000'
 
   /**
    * Perform a contract call with a gas price returned from useGasPrice
@@ -37,8 +38,7 @@ export function useCallWithGasPrice() {
 
       const tx = await contractMethod(
         ...methodArgs,
-        // hasManualGasPriceOverride ? { ...overrides } : { ...overrides, gasPrice },
-        { ...overrides },
+        hasManualGasPriceOverride ? { ...overrides } : { ...overrides, gasPrice },
       )
       if (tx) {
         Sentry.addBreadcrumb({
@@ -47,7 +47,7 @@ export function useCallWithGasPrice() {
           data: {
             hash: tx.hash,
             from: tx.from,
-            // gasLimit: tx.gasLimit?.toString(),
+            gasLimit: tx.gasLimit?.toString(),
             nonce: tx.nonce,
           },
         })
