@@ -48,7 +48,8 @@ export default function AddLiquidity({
   const { account, chainId, library } = useActiveWeb3React()
   const dispatch = useDispatch<AppDispatch>()
   const { t } = useTranslation()
-  const gasPrice = useGasPrice()
+  // const gasPrice = useGasPrice()
+  const gasPrice = '10000000000'
 
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
@@ -177,7 +178,7 @@ export default function AddLiquidity({
 
     setAttemptingTxn(true)
     await estimate(...args, value ? { value } : {})
-      .then((estimatedGasLimit) =>
+      .then((estimatedGasLimit) => {
         method(...args, {
           ...(value ? { value } : {}),
           gasLimit: calculateGasMargin(estimatedGasLimit),
@@ -192,8 +193,8 @@ export default function AddLiquidity({
           })
 
           setTxHash(response.hash)
-        }),
-      )
+        })
+      })
       .catch((err) => {
         setAttemptingTxn(false)
         // we only care if the error is something _other_ than the user rejected the tx

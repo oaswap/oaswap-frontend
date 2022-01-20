@@ -138,7 +138,9 @@ export default function PoolFinder() {
             >
               <Text textAlign="center">{t('Pool Found!')}</Text>
               <StyledInternalLink to="/pool">
-                <Text textAlign="center">{t('Manage this pool.')}</Text>
+                <Text textAlign="center" style={{ textDecoration: 'underline', color: '#1fc7d4' }}>
+                  {t('Manage this pool')}
+                </Text>
               </StyledInternalLink>
             </ColumnCenter>
           )}
