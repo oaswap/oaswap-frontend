@@ -33,7 +33,7 @@ const farms: SerializedFarmConfig[] = [
     lpAddresses: {
       4: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
       56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
-      42262: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4', // Needs update
+      42262: '0xD73F329CCAF035F40030D96A8B208f7BF4Bdd1A8', // Needs update
     },
     token: serializedTokens.oas,
     quoteToken: serializedTokens.wrose,
