@@ -21,7 +21,7 @@ export const mainnetTokens = defineTokens({
   ),
   oas: new Token(
     MAINNET,
-    '0xCF4BF33985fF6421Ac1a0472Dd6f2ed565Df4c85',
+    '0x6D906f979ab61d43921212895F25FEcBCd2750E7',
     18,
     'OAS',
     'Oaswap Token',

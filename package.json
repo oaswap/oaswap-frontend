@@ -31,7 +31,7 @@
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
     "@ethersproject/experimental": "^5.5.0",
-    "@oaswap/sdk": "^1.0.13",
+    "@oaswap/sdk": "^1.0.14",
     "@oaswap/uikit": "^0.17.0",
     "@pancakeswap/sdk": "^2.4.0",
     "@pancakeswap/uikit": "^0.62.0",
