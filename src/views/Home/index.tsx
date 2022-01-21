@@ -80,9 +80,9 @@ const Home: React.FC = () => {
         index={2}
         hasCurvedDivider={false}
       >
-        <Flex pt={['0', null, null, '0']} mt={['-16px', null, null, '-48px']} pb="24px">
+        {/* <Flex pt={['0', null, null, '0']} mt={['-16px', null, null, '-48px']} pb="24px">
           <FairLaunchBanner />
-        </Flex>
+        </Flex> */}
 
         {/* {account && (
           <UserBannerWrapper>
