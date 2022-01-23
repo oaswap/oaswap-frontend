@@ -11,11 +11,12 @@ const farms: SerializedFarmConfig[] = [
     pid: 0,
     lpSymbol: 'OAS',
     lpAddresses: {
-      4: '0x6D906f979ab61d43921212895F25FEcBCd2750E7',
+      4: '0x78899197b5462d56e24389F17afbfE4F91534E15',
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+      42262: '0xD73F329CCAF035F40030D96A8B208f7BF4Bdd1A8', // Needs update
     },
-    token: serializedTokens.syrup,
-    quoteToken: serializedTokens.wbnb,
+    token: serializedTokens.oas,
+    quoteToken: serializedTokens.wrose,
   },
   // {
   //   pid: 251,
@@ -28,10 +29,10 @@ const farms: SerializedFarmConfig[] = [
   //   quoteToken: serializedTokens.wbnb,
   // },
   {
-    pid: 251,
+    pid: 2,
     lpSymbol: 'OAS-ROSE LP',
     lpAddresses: {
-      4: '0x3ed8936cAFDF85cfDBa29Fbe5940A5b0524824F4',
+      4: '0xe0f0A8605c2E5436B73253Ac648b149a40B6C252', // WETH-OAS Sushi LP Token
       56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
       42262: '0xD73F329CCAF035F40030D96A8B208f7BF4Bdd1A8', // Needs update
     },

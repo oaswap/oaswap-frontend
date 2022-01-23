@@ -122,7 +122,7 @@ export const testnetTokens = defineTokens({
   ),
   oas: new Token(
     TESTNET,
-    '0x2a59CF671C379b6a8B3E0A2dddddd9582d60208c',
+    '0x78899197b5462d56e24389F17afbfE4F91534E15',
     18,
     'OAS',
     'Oaswap Token',
