@@ -9,9 +9,9 @@ const farms: SerializedFarmConfig[] = [
    */
   {
     pid: 0,
-    lpSymbol: 'CAKE',
+    lpSymbol: 'OAS',
     lpAddresses: {
-      4: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      4: '0x6D906f979ab61d43921212895F25FEcBCd2750E7',
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     token: serializedTokens.syrup,

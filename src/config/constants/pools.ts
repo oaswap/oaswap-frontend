@@ -33,7 +33,7 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.oas,
     earningToken: serializedTokens.oas,
     contractAddress: {
-      4: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
+      4: '0x6D906f979ab61d43921212895F25FEcBCd2750E7',
       56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
       42262: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a', // Needs update
     },
