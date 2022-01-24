@@ -1,6 +1,6 @@
 export default {
   masterChef: {
-    4: '0xE698d25BD4739d2b9647a324B2751Db9872fa5b2',
+    4: '0x1588e99741Dba92A3779C77fa0325AD855E44e0e',
     56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
     42262: '0xbaF4f9779fd6EcF8cE7EB4AffD563B758b083b5f', // Needs update
   },
@@ -57,7 +57,7 @@ export default {
   },
   cakeVault: {
     56: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC',
-    4: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC',
+    4: '0x9aE93e1448B5cCa84B405c2cFb7119FA867C8aFF',
     42262: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC', // Needs update
   },
   ifoPool: {
