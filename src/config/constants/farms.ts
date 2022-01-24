@@ -29,7 +29,7 @@ const farms: SerializedFarmConfig[] = [
   //   quoteToken: serializedTokens.wbnb,
   // },
   {
-    pid: 2,
+    pid: 3,
     lpSymbol: 'OAS-ROSE LP',
     lpAddresses: {
       4: '0xe0f0A8605c2E5436B73253Ac648b149a40B6C252', // WETH-OAS Sushi LP Token
