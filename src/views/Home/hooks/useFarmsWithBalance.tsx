@@ -19,33 +19,33 @@ const useFarmsWithBalance = () => {
   const { account } = useWeb3React()
   const fastRefresh = useFastFresh()
 
-  // useEffect(() => {
-  //   const fetchBalances = async () => {
-  //     const calls = farmsConfig.map((farm) => ({
-  //       address: getMasterChefAddress(),
-  //       name: 'pendingCake',
-  //       params: [farm.pid, account],
-  //     }))
-  //     console.log(calls)
-  //     const rawResults = await multicall(masterChefABI, calls)
-  //     const results = farmsConfig.map((farm, index) => ({ ...farm, balance: new BigNumber(rawResults[index]) }))
-  //     const farmsWithBalances = results.filter((balanceType) => balanceType.balance.gt(0))
-  //     const totalEarned = farmsWithBalances.reduce((accum, earning) => {
-  //       const earningNumber = new BigNumber(earning.balance)
-  //       if (earningNumber.eq(0)) {
-  //         return accum
-  //       }
-  //       return accum + earningNumber.div(DEFAULT_TOKEN_DECIMAL).toNumber()
-  //     }, 0)
+  useEffect(() => {
+    const fetchBalances = async () => {
+      const calls = farmsConfig.map((farm) => ({
+        address: getMasterChefAddress(),
+        name: 'pendingOas',
+        params: [farm.pid, account],
+      }))
+      console.log(calls)
+      const rawResults = await multicall(masterChefABI, calls)
+      const results = farmsConfig.map((farm, index) => ({ ...farm, balance: new BigNumber(rawResults[index]) }))
+      const farmsWithBalances = results.filter((balanceType) => balanceType.balance.gt(0))
+      const totalEarned = farmsWithBalances.reduce((accum, earning) => {
+        const earningNumber = new BigNumber(earning.balance)
+        if (earningNumber.eq(0)) {
+          return accum
+        }
+        return accum + earningNumber.div(DEFAULT_TOKEN_DECIMAL).toNumber()
+      }, 0)
 
-  //     setFarmsWithStakedBalance(farmsWithBalances)
-  //     setEarningsSum(totalEarned)
-  //   }
+      setFarmsWithStakedBalance(farmsWithBalances)
+      setEarningsSum(totalEarned)
+    }
 
-  //   if (account) {
-  //     fetchBalances()
-  //   }
-  // }, [account, fastRefresh])
+    if (account) {
+      fetchBalances()
+    }
+  }, [account, fastRefresh])
 
   return { farmsWithStakedBalance, earningsSum }
 }
