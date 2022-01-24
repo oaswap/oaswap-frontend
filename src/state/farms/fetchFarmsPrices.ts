@@ -25,7 +25,7 @@ const getFarmBaseTokenPrice = (
     return hasTokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  if (farm.quoteToken.symbol === tokens.wbnb.symbol) {
+  if (farm.quoteToken.symbol === tokens.wrose.symbol) {
     return hasTokenPriceVsQuote ? bnbPriceBusd.times(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
@@ -39,7 +39,7 @@ const getFarmBaseTokenPrice = (
   // If the farm's quote token isn't BUSD or WBNB, we then use the quote token, of the original farm's quote token
   // i.e. for farm PNT - pBTC we use the pBTC farm's quote token - BNB, (pBTC - BNB)
   // from the BNB - pBTC price, we can calculate the PNT - BUSD price
-  if (quoteTokenFarm.quoteToken.symbol === tokens.wbnb.symbol) {
+  if (quoteTokenFarm.quoteToken.symbol === tokens.wrose.symbol) {
     const quoteTokenInBusd = bnbPriceBusd.times(quoteTokenFarm.tokenPriceVsQuote)
     return hasTokenPriceVsQuote && quoteTokenInBusd
       ? new BigNumber(farm.tokenPriceVsQuote).times(quoteTokenInBusd)
@@ -66,7 +66,7 @@ const getFarmQuoteTokenPrice = (
     return BIG_ONE
   }
 
-  if (farm.quoteToken.symbol === 'WBNB') {
+  if (farm.quoteToken.symbol === 'WROSE') {
     return bnbPriceBusd
   }
 
@@ -74,7 +74,7 @@ const getFarmQuoteTokenPrice = (
     return BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'WBNB') {
+  if (quoteTokenFarm.quoteToken.symbol === 'WROSE') {
     return quoteTokenFarm.tokenPriceVsQuote ? bnbPriceBusd.times(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
@@ -86,14 +86,16 @@ const getFarmQuoteTokenPrice = (
 }
 
 const fetchFarmsPrices = async (farms: SerializedFarm[]) => {
-  const bnbBusdFarm = farms.find((farm) => farm.pid === 252)
+  const bnbBusdFarm = farms.find((farm) => farm.pid === 3)
   const bnbPriceBusd = bnbBusdFarm.tokenPriceVsQuote ? BIG_ONE.div(bnbBusdFarm.tokenPriceVsQuote) : BIG_ZERO
 
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol)
     const tokenPriceBusd = getFarmBaseTokenPrice(farm, quoteTokenFarm, bnbPriceBusd)
     const quoteTokenPriceBusd = getFarmQuoteTokenPrice(farm, quoteTokenFarm, bnbPriceBusd)
-
+    // console.log('quoteTokenFarm', quoteTokenFarm)
+    // console.log('tokenPriceBusd', tokenPriceBusd)
+    // console.log('quoteTokenPriceBusd', quoteTokenPriceBusd)
     return {
       ...farm,
       tokenPriceBusd: tokenPriceBusd.toJSON(),
