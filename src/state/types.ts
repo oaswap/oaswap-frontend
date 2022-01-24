@@ -135,7 +135,7 @@ export interface VaultFees {
 export interface VaultUser {
   isLoading: boolean
   userShares: string
-  cakeAtLastUserAction: string
+  oasAtLastUserAction: string
   lastDepositedTime: string
   lastUserActionTime: string
 }

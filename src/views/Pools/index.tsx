@@ -172,7 +172,7 @@ const Pools: React.FC = () => {
             return pool.vaultKey
               ? getCakeVaultEarnings(
                   account,
-                  vaultPools[pool.vaultKey].userData.cakeAtLastUserAction,
+                  vaultPools[pool.vaultKey].userData.oasAtLastUserAction,
                   vaultPools[pool.vaultKey].userData.userShares,
                   vaultPools[pool.vaultKey].pricePerFullShare,
                   pool.earningTokenPrice,

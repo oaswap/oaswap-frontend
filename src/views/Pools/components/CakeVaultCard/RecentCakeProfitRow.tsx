@@ -13,12 +13,12 @@ const RecentCakeProfitCountdownRow = ({ vaultKey }: { vaultKey: VaultKey }) => {
   const { account } = useWeb3React()
   const {
     pricePerFullShare,
-    userData: { cakeAtLastUserAction, userShares, lastUserActionTime },
+    userData: { oasAtLastUserAction, userShares, lastUserActionTime },
   } = useVaultPoolByKey(vaultKey)
   const cakePriceBusd = usePriceCakeBusd()
   const { hasAutoEarnings, autoCakeToDisplay, autoUsdToDisplay } = getCakeVaultEarnings(
     account,
-    cakeAtLastUserAction,
+    oasAtLastUserAction,
     userShares,
     pricePerFullShare,
     cakePriceBusd.toNumber(),

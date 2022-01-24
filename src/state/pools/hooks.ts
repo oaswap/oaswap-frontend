@@ -116,7 +116,7 @@ export const useCakeVault = () => {
 export const useVaultPools = () => {
   return {
     [VaultKey.CakeVault]: useVaultPoolByKey(VaultKey.CakeVault),
-    [VaultKey.IfoPool]: useVaultPoolByKey(VaultKey.IfoPool),
+    // [VaultKey.IfoPool]: useVaultPoolByKey(VaultKey.IfoPool), // Removed Jan. 24 for farm launch
   }
 }
 
@@ -131,7 +131,7 @@ export const useVaultPoolByKey = (key: VaultKey) => {
     userData: {
       isLoading,
       userShares: userSharesAsString,
-      cakeAtLastUserAction: cakeAtLastUserActionAsString,
+      oasAtLastUserAction: oasAtLastUserActionAsString,
       lastDepositedTime,
       lastUserActionTime,
     },
@@ -161,9 +161,9 @@ export const useVaultPoolByKey = (key: VaultKey) => {
     return new BigNumber(userSharesAsString)
   }, [userSharesAsString])
 
-  const cakeAtLastUserAction = useMemo(() => {
-    return new BigNumber(cakeAtLastUserActionAsString)
-  }, [cakeAtLastUserActionAsString])
+  const oasAtLastUserAction = useMemo(() => {
+    return new BigNumber(oasAtLastUserActionAsString)
+  }, [oasAtLastUserActionAsString])
 
   const performanceFeeAsDecimal = performanceFee && performanceFee / 100
 
@@ -183,7 +183,7 @@ export const useVaultPoolByKey = (key: VaultKey) => {
     userData: {
       isLoading,
       userShares,
-      cakeAtLastUserAction,
+      oasAtLastUserAction,
       lastDepositedTime,
       lastUserActionTime,
     },
