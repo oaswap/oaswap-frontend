@@ -33,8 +33,8 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.oas,
     earningToken: serializedTokens.oas,
     contractAddress: {
-      4: '0x6D906f979ab61d43921212895F25FEcBCd2750E7',
-      56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+      4: '0x1588e99741Dba92A3779C77fa0325AD855E44e0e',
+      56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E', // MasterChef
       42262: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a', // Needs update
     },
     poolCategory: PoolCategory.CORE,
