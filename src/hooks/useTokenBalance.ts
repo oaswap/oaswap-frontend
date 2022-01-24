@@ -56,15 +56,15 @@ export const useTotalSupply = () => {
   const slowRefresh = useSlowFresh()
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
 
-  // useEffect(() => {
-  //   async function fetchTotalSupply() {
-  //     const cakeContract = getCakeContract()
-  //     const supply = await cakeContract.totalSupply()
-  //     setTotalSupply(new BigNumber(supply.toString()))
-  //   }
+  useEffect(() => {
+    async function fetchTotalSupply() {
+      const cakeContract = getCakeContract()
+      const supply = await cakeContract.totalSupply()
+      setTotalSupply(new BigNumber(supply.toString()))
+    }
 
-  //   fetchTotalSupply()
-  // }, [slowRefresh])
+    fetchTotalSupply()
+  }, [slowRefresh])
 
   return totalSupply
 }
@@ -73,16 +73,16 @@ export const useBurnedBalance = (tokenAddress: string) => {
   const [balance, setBalance] = useState(BIG_ZERO)
   const slowRefresh = useSlowFresh()
 
-  // useEffect(() => {
-  //   const fetchBalance = async () => {
-  //     const contract = getBep20Contract(tokenAddress)
-  //     console.log(tokenAddress)
-  //     const res = await contract.balanceOf('0x000000000000000000000000000000000000dEaD')
-  //     setBalance(new BigNumber(res.toString()))
-  //   }
+  useEffect(() => {
+    const fetchBalance = async () => {
+      const contract = getBep20Contract(tokenAddress)
+      console.log(tokenAddress)
+      const res = await contract.balanceOf('0x000000000000000000000000000000000000dEaD')
+      setBalance(new BigNumber(res.toString()))
+    }
 
-  //   fetchBalance()
-  // }, [tokenAddress, slowRefresh])
+    fetchBalance()
+  }, [tokenAddress, slowRefresh])
 
   return balance
 }
@@ -113,7 +113,7 @@ export const useGetBnbBalance = () => {
 }
 
 export const useGetCakeBalance = () => {
-  const { balance, fetchStatus } = useTokenBalance(tokens.cake.address)
+  const { balance, fetchStatus } = useTokenBalance(tokens.oas.address)
 
   // TODO: Remove ethers conversion once useTokenBalance is converted to ethers.BigNumber
   return { balance: ethers.BigNumber.from(balance.toString()), fetchStatus }
