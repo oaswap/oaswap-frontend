@@ -10,7 +10,7 @@ import {
   useTooltip,
   LinkExternal,
   Link,
-  TokenPairImage,
+  TokenImage,
 } from '@oaswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -67,7 +67,11 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     <FaucetStyledCard isActive {...props}>
       <FaucetPoolCardHeader isStaking={false}>
         <FaucetPoolCardHeaderTitle title={t('card header title')} subTitle={t('card subtitle')} />
-        <TokenPairImage {...vaultPoolConfig[VaultKey.CakeVault].tokenImage} width={64} height={64} />
+        <TokenImage
+          src="https://secureservercdn.net/160.153.137.210/mbu.abb.myftpupload.com/wp-content/uploads/2021/07/52803776.png"
+          width={64}
+          height={64}
+        />
       </FaucetPoolCardHeader>
       <StyledCardBody isLoading={false}>
         <FlexGap mt="16px" gap="24px" flexDirection={false ? 'column-reverse' : 'column'}>
