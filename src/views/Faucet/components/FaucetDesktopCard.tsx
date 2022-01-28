@@ -17,17 +17,17 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import { VaultKey } from 'state/types'
 import { FlexGap } from 'components/Layout/Flex'
 import { vaultPoolConfig } from 'config/constants/pools'
+import { RowBetween } from 'components/Layout/Row'
 import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
-import { RowBetween } from 'components/Layout/Row'
 import { FaucetAddressInput as AddressInput } from './FaucetAddressInput'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
 `
 
-const InputRow = styled.div<{ selected: boolean }>`
+const InputRow = styled.div<{ selected?: boolean }>`
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -83,7 +83,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
                     <AddressInput className="token-amount-input" />
                   </RowBetween>
                 </LabelRow>
-                <InputRow selected={true}></InputRow>
+                <InputRow>input row</InputRow>
               </Container>
             </InputPanel>
           </Box>
