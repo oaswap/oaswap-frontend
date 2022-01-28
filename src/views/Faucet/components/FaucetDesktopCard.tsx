@@ -20,9 +20,44 @@ import { vaultPoolConfig } from 'config/constants/pools'
 import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
+import { RowBetween } from 'components/Layout/Row'
+import { FaucetAddressInput as AddressInput } from './FaucetAddressInput'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
+`
+
+const InputRow = styled.div<{ selected: boolean }>`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
+`
+
+const LabelRow = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 0.75rem 1rem 0 1rem;
+`
+
+const InputPanel = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  border-radius: '20px';
+  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  z-index: 1;
+`
+
+const Container = styled.div`
+  border-radius: 16px;
+  background-color: ${({ theme }) => theme.colors.input};
+  box-shadow: ${({ theme }) => theme.shadows.inset};
 `
 
 const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
@@ -39,6 +74,18 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           <Box>
             <Box mt="24px">24px box</Box>
             <Box mt="8px">8px box</Box>
+          </Box>
+          <Box>
+            <InputPanel>
+              <Container>
+                <LabelRow>
+                  <RowBetween>
+                    <AddressInput className="token-amount-input" />
+                  </RowBetween>
+                </LabelRow>
+                <InputRow selected={true}></InputRow>
+              </Container>
+            </InputPanel>
           </Box>
           <Flex flexDirection="column">
             <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
