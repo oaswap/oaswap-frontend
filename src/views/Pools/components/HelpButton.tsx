@@ -30,7 +30,8 @@ const HelpButton = () => {
   const { t } = useTranslation()
   return (
     <Container>
-      <StyledLink external href="https://docs.oaswap.finance/products/oaswap-pool/oaswap-pool-faq">
+      {/* <StyledLink external href="https://docs.oaswap.finance/products/oaswap-pool/oaswap-pool-faq"> */}
+      <StyledLink external href="https://docs.oaswap.finance">
         <Button px={['14px', null, null, null, '20px']} variant="subtle">
           <ButtonText color="backgroundAlt" bold fontSize="16px">
             {t('Help')}

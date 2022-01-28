@@ -39,6 +39,17 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.oas,
     quoteToken: serializedTokens.wrose,
   },
+  {
+    pid: 4,
+    lpSymbol: 'ROSE-USDT LP',
+    lpAddresses: {
+      4: '0x2b6CF4939f7baF46CA08AC1cDC8086AcE077432c', // WETH-LOCK Sushi LP Token
+      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+      42262: '0xD73F329CCAF035F40030D96A8B208f7BF4Bdd1A8', // Needs update
+    },
+    token: serializedTokens.wrose,
+    quoteToken: serializedTokens.busd,
+  },
   // {
   //   pid: 252,
   //   lpSymbol: 'BUSD-BNB LP',
