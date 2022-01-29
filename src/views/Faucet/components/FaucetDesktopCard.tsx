@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { utils } from 'ethers'
 import styled from 'styled-components'
 import {
@@ -70,6 +70,8 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const walletInput = useRef<HTMLInputElement>(null)
   const [submitting, setSubmitting] = useState(false)
   const [badAddress, setBadAddress] = useState('none')
+  const [attemptingTxn, setAttemptingTxn] = useState<boolean>(false)
+  const [txHash, setTxHash] = useState<string>('')
 
   const callFaucetRelay = async (event) => {
     console.log(walletInput.current.value)
@@ -179,15 +181,22 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     )
   }
 
+  const handleDismissConfirmation = useCallback(() => {
+    // if there was a tx hash, we want to clear the input
+    if (txHash) {
+      onFieldAInput('')
+    }
+    setTxHash('')
+  }, [onFieldAInput, txHash])
+
   const [onPresentFaucetModal] = useModal(
     <TransactionConfirmationModal
-      title={noLiquidity ? t('You are creating a pool') : t('You will receive')}
+      title={t('You are creating a pool')}
       customOnDismiss={handleDismissConfirmation}
       attemptingTxn={attemptingTxn}
       hash={txHash}
       content={() => <ConfirmationModalContent topContent={modalHeader} bottomContent={modalBottom} />}
-      pendingText={pendingText}
-      currencyToAdd={pair?.liquidityToken}
+      pendingText={t('Pending text here...')}
     />,
     true,
     true,
