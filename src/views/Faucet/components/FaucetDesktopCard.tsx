@@ -85,6 +85,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
       setSubmitting(true)
 
       try {
+        onPresentFaucetModal()
         const response = await callRelayer(walletAddress)
         console.log(response)
 
@@ -173,7 +174,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     />,
     true,
     true,
-    'addLiquidityModal',
+    'faucetConfirmationModal',
   )
 
   return (
