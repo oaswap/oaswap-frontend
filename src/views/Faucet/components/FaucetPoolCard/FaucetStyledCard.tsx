@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Card } from '@oaswap/uikit'
 
 export const FaucetStyledCard = styled(Card)<{ isFinished?: boolean }>`
-  max-width: 352px;
+  max-width: 800px;
   margin: 0 8px 24px;
   width: 100%;
   min-width: 300px;

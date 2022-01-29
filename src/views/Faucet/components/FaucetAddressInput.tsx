@@ -77,7 +77,7 @@ export const FaucetAddressInput = React.memo(function InnerInput({
       // text-specific options
       type="text"
       pattern="^[0-9]*[.,]?[0-9]*$"
-      placeholder={placeholder || '0.0'}
+      placeholder="Ex: 0x709c81042A1fgaC78F46799a401d809fd40813CD"
       minLength={1}
       maxLength={79}
       spellCheck="false"
