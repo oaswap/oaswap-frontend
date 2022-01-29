@@ -168,15 +168,17 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           )}
         </RowBetween>
 
-        {!attemptingTxn ? (
-          <div style={{ marginTop: 20 }}>
-            <Spinner size={32} />
-          </div>
-        ) : (
-          <>
-            <Button mt="20px">{t('Close')}</Button>
-          </>
-        )}
+        <Flex justifyContent="center">
+          {!attemptingTxn ? (
+            <div style={{ marginTop: 20 }}>
+              <Spinner size={48} />
+            </div>
+          ) : (
+            <>
+              <Button mt="20px">{t('Close')}</Button>
+            </>
+          )}
+        </Flex>
       </>
     )
   }
