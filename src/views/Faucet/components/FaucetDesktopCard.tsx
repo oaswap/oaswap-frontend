@@ -15,9 +15,8 @@ import {
   TokenImage,
 } from '@oaswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import { VaultKey } from 'state/types'
+import useToast from 'hooks/useToast'
 import { FlexGap } from 'components/Layout/Flex'
-import { vaultPoolConfig } from 'config/constants/pools'
 import { RowBetween } from 'components/Layout/Row'
 import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
@@ -64,6 +63,7 @@ const Container = styled.div`
 
 const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const { t } = useTranslation()
+  const { toastError } = useToast()
   const walletInput = useRef<HTMLInputElement>(null)
   const [submitting, setSubmitting] = useState(false)
   const [badAddress, setBadAddress] = useState('none')
@@ -91,6 +91,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
       }
     } else {
       setBadAddress('block')
+      toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
     }
   }
 
