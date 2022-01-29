@@ -12,6 +12,7 @@ import {
   useTooltip,
   LinkExternal,
   Link,
+  Spinner,
   TokenImage,
   useModal,
 } from '@oaswap/uikit'
@@ -71,7 +72,6 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const { t } = useTranslation()
   const { toastError } = useToast()
   const walletInput = useRef<HTMLInputElement>(null)
-  const [submitting, setSubmitting] = useState(false)
   const [badAddress, setBadAddress] = useState('none')
   const [attemptingTxn, setAttemptingTxn] = useState<boolean>(false)
   const [txHash, setTxHash] = useState<string>('')
@@ -82,26 +82,24 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     const walletAddress = walletInput.current.value
 
     if (utils.isAddress(walletAddress)) {
-      setSubmitting(true)
+      setAttemptingTxn(true)
 
       try {
         onPresentFaucetModal()
         const response = await callRelayer(walletAddress)
         console.log(response)
         setTxHash(response.hash)
-
-        // const hash = response.hash
         // toast('Transaction sent!', { type: 'info', onClick })
         walletInput.current.value = ''
-      } catch (err) {
+      } catch (err: any) {
         // toast(err.message || err, { type: 'error' })
+        toastError(t('Error'), err.message || err)
         console.log('err', err)
       } finally {
-        setSubmitting(false)
+        setAttemptingTxn(false)
       }
     } else {
-      //   setBadAddress('block')
-      toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
+      toastError(t('Error'), t('Invalid wallet address. Please try again.'))
     }
   }
 
@@ -110,15 +108,15 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
       <AutoColumn>
         <Flex alignItems="center">
           <Text fontSize="48px" marginRight="10px">
-            text component
+            Waiting for confirmation
           </Text>
-          <CurrencyLogo currency={ETHER} />
+          {/* <CurrencyLogo currency={ETHER} /> */}
         </Flex>
-        <Row>
-          <Text fontSize="24px">currency symbol Pool Tokens</Text>
-        </Row>
-        <Text small textAlign="left" my="24px">
-          {t('Output is estimated. If the price changes by more than %slippage%% your transaction will revert.')}
+        {/* <Row>
+          <Text fontSize="24px">Transactions have been initiated.</Text>
+        </Row> */}
+        <Text small textAlign="left" mb="32px">
+          {t('Transactions have been initiated. Waiting for confirmation from the Oaswap ROSE faucet.')}
         </Text>
       </AutoColumn>
     )
@@ -127,18 +125,19 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const modalBottom = () => {
     return (
       <>
-        <RowBetween>
+        {/* <RowBetween>
           <Text>{t('%asset% Deposited')}</Text>
           <RowFixed>
             <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
             <Text>{t('text field')}</Text>
           </RowFixed>
-        </RowBetween>
+        </RowBetween> */}
         <RowBetween>
           <Text>{t('%asset% Deposited', { asset: ETHER?.symbol })}</Text>
           <RowFixed>
             <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
-            <Text>{t('text here')}</Text>
+            {/* <Text>{t('text here')}</Text> */}
+            <Spinner size={8} />
           </RowFixed>
         </RowBetween>
         <RowBetween>
@@ -166,7 +165,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
 
   const [onPresentFaucetModal] = useModal(
     <TransactionConfirmationModal
-      title={t('You are creating a pool')}
+      title={t('You are requesting ROSE')}
       customOnDismiss={handleDismissConfirmation}
       attemptingTxn={attemptingTxn}
       hash={txHash}
