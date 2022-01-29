@@ -19,7 +19,7 @@ import { CurrencyLogo } from 'components/Logo'
 import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
 import { FlexGap } from 'components/Layout/Flex'
-import { Row, RowBetween, RowFixed } from 'components/Layout/Row'
+import Row, { RowBetween, RowFixed } from 'components/Layout/Row'
 import { AutoColumn } from 'components/Layout/Column'
 import TransactionConfirmationModal, { ConfirmationModalContent } from 'components/TransactionConfirmationModal'
 
