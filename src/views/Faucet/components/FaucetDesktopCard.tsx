@@ -23,6 +23,7 @@ import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
 import { FaucetAddressInput as AddressInput } from './FaucetAddressInput'
+import { callRelayer } from '../helpers'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
@@ -76,8 +77,8 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
       setSubmitting(true)
 
       try {
-        // const response = await callRelayer(mainnetProvider, walletAddress)
-        // console.log(response)
+        const response = await callRelayer(walletAddress)
+        console.log(response)
 
         // const hash = response.hash
         // toast('Transaction sent!', { type: 'info', onClick })
@@ -121,11 +122,11 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
               </Container>
             </InputPanel>
           </Box>
-          <Flex flexDirection="column">
-            <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
+          <Flex flexDirection="column" alignItems="center">
+            {/* <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
               {t('Start earning')}
-            </Text>
-            <Button onClick={callFaucetRelay} />
+            </Text> */}
+            <Button onClick={callFaucetRelay}>{t('Send Request')}</Button>
           </Flex>
         </FlexGap>
       </StyledCardBody>
