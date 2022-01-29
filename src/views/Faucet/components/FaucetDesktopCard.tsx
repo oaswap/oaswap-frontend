@@ -27,6 +27,7 @@ import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
 import { FaucetAddressInput as AddressInput } from './FaucetAddressInput'
 import { callRelayer } from '../helpers'
+import { ETHER } from '@oaswap/sdk'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
@@ -143,41 +144,30 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     return (
       <>
         <RowBetween>
-          <Text>{t('%asset% Deposited', { asset: currencies[Field.CURRENCY_A]?.symbol })}</Text>
+          <Text>{t('%asset% Deposited')}</Text>
           <RowFixed>
-            <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} />
+            <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
             <Text>{t('text field')}</Text>
           </RowFixed>
         </RowBetween>
         <RowBetween>
-          <Text>{t('%asset% Deposited', { asset: currencies[Field.CURRENCY_B]?.symbol })}</Text>
+          <Text>{t('%asset% Deposited', { asset: ETHER?.symbol })}</Text>
           <RowFixed>
-            <CurrencyLogo currency={currencies[Field.CURRENCY_B]} style={{ marginRight: '8px' }} />
-            <Text>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</Text>
+            <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
+            <Text>{t('text here')}</Text>
           </RowFixed>
         </RowBetween>
         <RowBetween>
           <Text>{t('Rates')}</Text>
-          <Text>
-            {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
-              currencies[Field.CURRENCY_B]?.symbol
-            }`}
-          </Text>
         </RowBetween>
         <RowBetween style={{ justifyContent: 'flex-end' }}>
-          <Text>
-            {`1 ${currencies[Field.CURRENCY_B]?.symbol} = ${price?.invert().toSignificant(4)} ${
-              currencies[Field.CURRENCY_A]?.symbol
-            }`}
-          </Text>
+          <Text>{t('more text')}</Text>
         </RowBetween>
         <RowBetween>
           <Text>{t('Share of Pool')}:</Text>
-          <Text>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Text>
+          <Text>100%</Text>
         </RowBetween>
-        <Button onClick={onAdd} mt="20px">
-          {noLiquidity ? t('Create Pool & Supply') : t('Confirm Supply')}
-        </Button>
+        <Button mt="20px">{t('Create Pool & Supply')}</Button>
       </>
     )
   }
