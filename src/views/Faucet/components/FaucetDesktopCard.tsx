@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import { utils } from 'ethers'
 import styled from 'styled-components'
 import {
   Box,
+  Button,
   CardBody,
   Flex,
   Text,
@@ -13,7 +15,6 @@ import {
   TokenImage,
 } from '@oaswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import ConnectWalletButton from 'components/ConnectWalletButton'
 import { VaultKey } from 'state/types'
 import { FlexGap } from 'components/Layout/Flex'
 import { vaultPoolConfig } from 'config/constants/pools'
@@ -62,6 +63,35 @@ const Container = styled.div`
 
 const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const { t } = useTranslation()
+  const walletInput = useRef<HTMLInputElement>(null)
+  const [submitting, setSubmitting] = useState(false)
+  const [badAddress, setBadAddress] = useState('none')
+
+  const callFaucetRelay = async (event) => {
+    console.log(walletInput.current.value)
+    event.preventDefault()
+    const walletAddress = walletInput.current.value
+
+    if (utils.isAddress(walletAddress)) {
+      setSubmitting(true)
+
+      try {
+        // const response = await callRelayer(mainnetProvider, walletAddress)
+        // console.log(response)
+
+        // const hash = response.hash
+        // toast('Transaction sent!', { type: 'info', onClick })
+        walletInput.current.value = ''
+      } catch (err) {
+        // toast(err.message || err, { type: 'error' })
+        console.log('err', err)
+      } finally {
+        setSubmitting(false)
+      }
+    } else {
+      setBadAddress('block')
+    }
+  }
 
   return (
     <FaucetStyledCard isActive {...props}>
@@ -84,7 +114,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
               <Container>
                 <LabelRow>
                   <RowBetween>
-                    <AddressInput className="token-amount-input" />
+                    <AddressInput className="token-amount-input" walletInput={walletInput} />
                   </RowBetween>
                 </LabelRow>
                 <InputRow>input row</InputRow>
@@ -95,7 +125,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
             <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
               {t('Start earning')}
             </Text>
-            <ConnectWalletButton />
+            <Button onClick={callFaucetRelay} />
           </Flex>
         </FlexGap>
       </StyledCardBody>
