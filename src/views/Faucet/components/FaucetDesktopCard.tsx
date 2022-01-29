@@ -13,11 +13,14 @@ import {
   LinkExternal,
   Link,
   TokenImage,
+  useModal,
 } from '@oaswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
 import { FlexGap } from 'components/Layout/Flex'
 import { RowBetween } from 'components/Layout/Row'
+import TransactionConfirmationModal, { ConfirmationModalContent } from 'components/TransactionConfirmationModal'
+
 import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
@@ -90,10 +93,106 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         setSubmitting(false)
       }
     } else {
-      setBadAddress('block')
+      //   setBadAddress('block')
       toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
     }
   }
+
+  const modalHeader = () => {
+    return noLiquidity ? (
+      <Flex alignItems="center">
+        <Text fontSize="48px" marginRight="10px">
+          {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol}`}
+        </Text>
+        <DoubleCurrencyLogo
+          currency0={currencies[Field.CURRENCY_A]}
+          currency1={currencies[Field.CURRENCY_B]}
+          size={30}
+        />
+      </Flex>
+    ) : (
+      <AutoColumn>
+        <Flex alignItems="center">
+          <Text fontSize="48px" marginRight="10px">
+            {liquidityMinted?.toSignificant(6)}
+          </Text>
+          <DoubleCurrencyLogo
+            currency0={currencies[Field.CURRENCY_A]}
+            currency1={currencies[Field.CURRENCY_B]}
+            size={30}
+          />
+        </Flex>
+        <Row>
+          <Text fontSize="24px">
+            {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol} Pool Tokens`}
+          </Text>
+        </Row>
+        <Text small textAlign="left" my="24px">
+          {t('Output is estimated. If the price changes by more than %slippage%% your transaction will revert.', {
+            slippage: allowedSlippage / 100,
+          })}
+        </Text>
+      </AutoColumn>
+    )
+  }
+
+  const modalBottom = () => {
+    return (
+      <>
+        <RowBetween>
+          <Text>{t('%asset% Deposited', { asset: currencies[Field.CURRENCY_A]?.symbol })}</Text>
+          <RowFixed>
+            <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} />
+            <Text>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</Text>
+          </RowFixed>
+        </RowBetween>
+        <RowBetween>
+          <Text>{t('%asset% Deposited', { asset: currencies[Field.CURRENCY_B]?.symbol })}</Text>
+          <RowFixed>
+            <CurrencyLogo currency={currencies[Field.CURRENCY_B]} style={{ marginRight: '8px' }} />
+            <Text>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</Text>
+          </RowFixed>
+        </RowBetween>
+        <RowBetween>
+          <Text>{t('Rates')}</Text>
+          <Text>
+            {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
+              currencies[Field.CURRENCY_B]?.symbol
+            }`}
+          </Text>
+        </RowBetween>
+        <RowBetween style={{ justifyContent: 'flex-end' }}>
+          <Text>
+            {`1 ${currencies[Field.CURRENCY_B]?.symbol} = ${price?.invert().toSignificant(4)} ${
+              currencies[Field.CURRENCY_A]?.symbol
+            }`}
+          </Text>
+        </RowBetween>
+        <RowBetween>
+          <Text>{t('Share of Pool')}:</Text>
+          <Text>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Text>
+        </RowBetween>
+        <Button onClick={onAdd} mt="20px">
+          {noLiquidity ? t('Create Pool & Supply') : t('Confirm Supply')}
+        </Button>
+      </>
+    )
+  }
+
+  const [onPresentFaucetModal] = useModal(
+    <TransactionConfirmationModal
+      title={noLiquidity ? t('You are creating a pool') : t('You will receive')}
+      customOnDismiss={handleDismissConfirmation}
+      attemptingTxn={attemptingTxn}
+      hash={txHash}
+      content={() => <ConfirmationModalContent topContent={modalHeader} bottomContent={modalBottom} />}
+      pendingText={pendingText}
+      currencyToAdd={pair?.liquidityToken}
+    />,
+    true,
+    true,
+    'addLiquidityModal',
+  )
 
   return (
     <FaucetStyledCard isActive {...props}>
