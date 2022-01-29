@@ -6,7 +6,6 @@ export async function callRelayer(walletAddress) {
   const request = { address: walletAddress }
 
   const handleErrors = (response) => {
-    console.log('wtffffffffff', response)
     // if (!response.ok) {
     //   throw Error(response.statusText)
     // }

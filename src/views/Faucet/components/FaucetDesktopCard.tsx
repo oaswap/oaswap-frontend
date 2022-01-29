@@ -88,6 +88,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         onPresentFaucetModal()
         const response = await callRelayer(walletAddress)
         console.log(response)
+        setTxHash(response.hash)
 
         // const hash = response.hash
         // toast('Transaction sent!', { type: 'info', onClick })
