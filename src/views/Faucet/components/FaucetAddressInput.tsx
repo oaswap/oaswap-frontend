@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { escapeRegExp } from 'utils'
@@ -45,6 +45,7 @@ export const FaucetAddressInput = React.memo(function InnerInput({
   value,
   onUserInput,
   placeholder,
+  walletInput,
   ...rest
 }: {
   value?: string | number
@@ -52,6 +53,7 @@ export const FaucetAddressInput = React.memo(function InnerInput({
   error?: boolean
   fontSize?: string
   align?: 'right' | 'left'
+  walletInput: React.Ref<HTMLInputElement>
 } & Omit<React.HTMLProps<HTMLInputElement>, 'ref' | 'onChange' | 'as'>) {
   const enforcer = (nextUserInput: string) => {
     if (nextUserInput === '' || inputRegex.test(escapeRegExp(nextUserInput))) {
@@ -81,6 +83,7 @@ export const FaucetAddressInput = React.memo(function InnerInput({
       minLength={1}
       maxLength={79}
       spellCheck="false"
+      ref={walletInput}
     />
   )
 })
