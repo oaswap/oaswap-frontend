@@ -19,7 +19,8 @@ import { CurrencyLogo } from 'components/Logo'
 import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
 import { FlexGap } from 'components/Layout/Flex'
-import { RowBetween, RowFixed } from 'components/Layout/Row'
+import { Row, RowBetween, RowFixed } from 'components/Layout/Row'
+import { AutoColumn } from 'components/Layout/Column'
 import TransactionConfirmationModal, { ConfirmationModalContent } from 'components/TransactionConfirmationModal'
 
 import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
@@ -103,38 +104,19 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   }
 
   const modalHeader = () => {
-    return noLiquidity ? (
-      <Flex alignItems="center">
-        <Text fontSize="48px" marginRight="10px">
-          {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol}`}
-        </Text>
-        <DoubleCurrencyLogo
-          currency0={currencies[Field.CURRENCY_A]}
-          currency1={currencies[Field.CURRENCY_B]}
-          size={30}
-        />
-      </Flex>
-    ) : (
+    return (
       <AutoColumn>
         <Flex alignItems="center">
           <Text fontSize="48px" marginRight="10px">
-            {liquidityMinted?.toSignificant(6)}
+            text component
           </Text>
-          <DoubleCurrencyLogo
-            currency0={currencies[Field.CURRENCY_A]}
-            currency1={currencies[Field.CURRENCY_B]}
-            size={30}
-          />
+          <CurrencyLogo currency={ETHER} />
         </Flex>
         <Row>
-          <Text fontSize="24px">
-            {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol} Pool Tokens`}
-          </Text>
+          <Text fontSize="24px">{`currency symbol Pool Tokens`}</Text>
         </Row>
         <Text small textAlign="left" my="24px">
-          {t('Output is estimated. If the price changes by more than %slippage%% your transaction will revert.', {
-            slippage: allowedSlippage / 100,
-          })}
+          {t('Output is estimated. If the price changes by more than %slippage%% your transaction will revert.')}
         </Text>
       </AutoColumn>
     )
