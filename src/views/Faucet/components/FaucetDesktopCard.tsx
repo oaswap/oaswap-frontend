@@ -15,6 +15,7 @@ import {
   TokenImage,
   useModal,
 } from '@oaswap/uikit'
+import { ETHER } from '@oaswap/sdk'
 import { CurrencyLogo } from 'components/Logo'
 import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
@@ -28,7 +29,6 @@ import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
 import { FaucetAddressInput as AddressInput } from './FaucetAddressInput'
 import { callRelayer } from '../helpers'
-import { ETHER } from '@oaswap/sdk'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
@@ -113,7 +113,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           <CurrencyLogo currency={ETHER} />
         </Flex>
         <Row>
-          <Text fontSize="24px">{`currency symbol Pool Tokens`}</Text>
+          <Text fontSize="24px">currency symbol Pool Tokens</Text>
         </Row>
         <Text small textAlign="left" my="24px">
           {t('Output is estimated. If the price changes by more than %slippage%% your transaction will revert.')}
@@ -160,7 +160,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     // }
     setTxHash('')
     //   }, [onFieldAInput, txHash])
-  }, [txHash])
+  }, [])
 
   const [onPresentFaucetModal] = useModal(
     <TransactionConfirmationModal
