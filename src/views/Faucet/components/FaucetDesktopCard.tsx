@@ -72,7 +72,6 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const { t } = useTranslation()
   const { toastError } = useToast()
   const walletInput = useRef<HTMLInputElement>(null)
-  const [badAddress, setBadAddress] = useState('none')
   const [attemptingTxn, setAttemptingTxn] = useState<boolean>(false)
   const [txHash, setTxHash] = useState<string>('')
 
@@ -116,7 +115,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           <Text fontSize="24px">Transactions have been initiated.</Text>
         </Row> */}
         <Text small textAlign="left" mb="32px">
-          {t('Transactions have been initiated. Waiting for confirmation from the Oaswap ROSE faucet.')}
+          {t('Transactions have been initiated, waiting to confirm...')}
         </Text>
       </AutoColumn>
     )
@@ -133,24 +132,51 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           </RowFixed>
         </RowBetween> */}
         <RowBetween>
+          <Text>{t('Amount Requested')}</Text>
+          <Text>{t('0.01 ROSE')}</Text>
+        </RowBetween>
+        <RowBetween>
           <Text>{t('%asset% Deposited', { asset: ETHER?.symbol })}</Text>
           <RowFixed>
-            <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
-            {/* <Text>{t('text here')}</Text> */}
-            <Spinner size={8} />
+            {!attemptingTxn ? (
+              <Text>...</Text>
+            ) : (
+              <>
+                <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
+                <Text>{t('0.01')}</Text>
+              </>
+            )}
           </RowFixed>
         </RowBetween>
-        <RowBetween>
-          <Text>{t('Rates')}</Text>
-        </RowBetween>
-        <RowBetween style={{ justifyContent: 'flex-end' }}>
+        {/* <RowBetween style={{ justifyContent: 'flex-end' }}>
           <Text>{t('more text')}</Text>
-        </RowBetween>
+        </RowBetween> */}
         <RowBetween>
-          <Text>{t('Share of Pool')}:</Text>
-          <Text>100%</Text>
+          <Text>{t('Transaction Hash')}</Text>
+          {!attemptingTxn ? (
+            <>
+              <Text>...</Text>
+            </>
+          ) : (
+            <>
+              <Text>
+                <a href="/#" target="_blank">
+                  {txHash.substring(0, 8)}
+                </a>
+              </Text>
+            </>
+          )}
         </RowBetween>
-        <Button mt="20px">{t('Create Pool & Supply')}</Button>
+
+        {!attemptingTxn ? (
+          <div style={{ marginTop: 20 }}>
+            <Spinner size={32} />
+          </div>
+        ) : (
+          <>
+            <Button mt="20px">{t('Close')}</Button>
+          </>
+        )}
       </>
     )
   }
