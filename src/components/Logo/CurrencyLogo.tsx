@@ -1,4 +1,3 @@
-// import { Currency, ETHER, Token } from '@oaswap/sdk'
 import { Currency, ETHER, Token } from '@oaswap/sdk'
 import { BinanceIcon } from '@oaswap/uikit'
 import React, { useMemo } from 'react'

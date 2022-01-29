@@ -15,10 +15,11 @@ import {
   TokenImage,
   useModal,
 } from '@oaswap/uikit'
+import { CurrencyLogo } from 'components/Logo'
 import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
 import { FlexGap } from 'components/Layout/Flex'
-import { RowBetween } from 'components/Layout/Row'
+import { RowBetween, RowFixed } from 'components/Layout/Row'
 import TransactionConfirmationModal, { ConfirmationModalContent } from 'components/TransactionConfirmationModal'
 
 import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
@@ -145,7 +146,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           <Text>{t('%asset% Deposited', { asset: currencies[Field.CURRENCY_A]?.symbol })}</Text>
           <RowFixed>
             <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} />
-            <Text>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</Text>
+            <Text>{t('text field')}</Text>
           </RowFixed>
         </RowBetween>
         <RowBetween>
@@ -182,12 +183,12 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   }
 
   const handleDismissConfirmation = useCallback(() => {
-    // if there was a tx hash, we want to clear the input
-    if (txHash) {
-      onFieldAInput('')
-    }
+    // if (txHash) {
+    //   onFieldAInput('')
+    // }
     setTxHash('')
-  }, [onFieldAInput, txHash])
+    //   }, [onFieldAInput, txHash])
+  }, [txHash])
 
   const [onPresentFaucetModal] = useModal(
     <TransactionConfirmationModal
