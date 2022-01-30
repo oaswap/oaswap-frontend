@@ -228,7 +228,9 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
             {/* <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
               {t('Start earning')}
             </Text> */}
-            <Button onClick={callFaucetRelay}>{t('Send Request')}</Button>
+            <Button onClick={callFaucetRelay} disabled={attemptingTxn}>
+              {t('Send Request')}
+            </Button>
           </Flex>
         </FlexGap>
       </StyledCardBody>
