@@ -115,9 +115,9 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         </Row> */}
         <Text small textAlign="left" mb="32px">
           {!attemptingTxn ? (
-            <>Congratulations, 0.1 ROSE was sent to your account.</>
+            <span style={{ color: '#1fc7d4' }}>Congratulations, 0.1 ROSE was sent to your account.</span>
           ) : (
-            <>{t('Transactions have been initiated, waiting to confirm...')}</>
+            <span style={{ color: '#B8ADD2' }}>{t('Transactions have been initiated, waiting to confirm...')}</span>
           )}
         </Text>
       </AutoColumn>
@@ -128,14 +128,14 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     return (
       <>
         <RowBetween>
-          <Text>{t('Amount Requested')}</Text>
+          <Text color="#B8ADD2">{t('Amount Requested')}</Text>
           <Text style={{ display: 'flex', alignItems: 'center' }}>
             {t('0.01')}{' '}
             <CurrencyLogo currency={ETHER} size="18px" style={{ marginLeft: 5, position: 'relative', top: 1 }} />
           </Text>
         </RowBetween>
         <RowBetween>
-          <Text>{t('Total Deposited')}</Text>
+          <Text color="#B8ADD2">{t('Total Deposited')}</Text>
           <RowFixed>
             {attemptingTxn ? (
               <Text>...</Text>
@@ -150,7 +150,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           </RowFixed>
         </RowBetween>
         <RowBetween>
-          <Text>{t('Transaction Hash')}</Text>
+          <Text color="#B8ADD2">{t('Transaction Hash')}</Text>
           {attemptingTxn ? (
             <>
               <Text>...</Text>
@@ -170,18 +170,6 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
             </>
           )}
         </RowBetween>
-
-        {/* <Flex justifyContent="center">
-          {attemptingTxn ? (
-            <div style={{ marginTop: 20 }}>
-              <Spinner size={48} />
-            </div>
-          ) : (
-            <div style={{ marginTop: 20 }}>
-              <Button onClick={() => null}>{t('Close')}</Button>
-            </div>
-          )}
-        </Flex> */}
       </>
     )
   }
