@@ -124,13 +124,6 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const modalBottom = () => {
     return (
       <>
-        {/* <RowBetween>
-          <Text>{t('%asset% Deposited')}</Text>
-          <RowFixed>
-            <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
-            <Text>{t('text field')}</Text>
-          </RowFixed>
-        </RowBetween> */}
         <RowBetween>
           <Text>{t('Amount Requested')}</Text>
           <Text style={{ display: 'flex', alignItems: 'center' }}>
@@ -139,21 +132,20 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           </Text>
         </RowBetween>
         <RowBetween>
-          <Text>{t('%asset% Deposited', { asset: ETHER?.symbol })}</Text>
+          <Text>{t('Total Deposited')}</Text>
           <RowFixed>
             {!attemptingTxn ? (
               <Text>...</Text>
             ) : (
               <>
-                {/* <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} /> */}
-                <Text>{t('0.01')}</Text>
+                <Text style={{ display: 'flex', alignItems: 'center' }}>
+                  {t('0.01')}{' '}
+                  <CurrencyLogo currency={ETHER} size="18px" style={{ marginLeft: 5, position: 'relative', top: 1 }} />
+                </Text>
               </>
             )}
           </RowFixed>
         </RowBetween>
-        {/* <RowBetween style={{ justifyContent: 'flex-end' }}>
-          <Text>{t('more text')}</Text>
-        </RowBetween> */}
         <RowBetween>
           <Text>{t('Transaction Hash')}</Text>
           {!attemptingTxn ? (
@@ -163,7 +155,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           ) : (
             <>
               <Text>
-                <a href="/#" target="_blank">
+                <a href={`https://explorer.emerald.oasis.dev/tx/${txHash}`} target="_blank" rel="noreferrer">
                   {txHash.substring(0, 8)}
                 </a>
               </Text>
