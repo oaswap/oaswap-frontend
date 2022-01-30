@@ -174,7 +174,18 @@ const FaucetModal: React.FC<InjectedModalProps & ConfirmationModalProps> = ({
   return (
     <Modal title={title} headerBackground="gradients.cardHeader" onDismiss={handleDismiss}>
       {content()}
-      <Button onClick={onDismiss}>fvsdkf</Button>
+
+      <Flex justifyContent="center">
+        {hash === '' ? (
+          <div style={{ marginTop: 20 }}>
+            <Spinner size={48} />
+          </div>
+        ) : (
+          <div style={{ marginTop: 20 }}>
+            <Button onClick={onDismiss}>Close</Button>
+          </div>
+        )}
+      </Flex>
     </Modal>
   )
 }
