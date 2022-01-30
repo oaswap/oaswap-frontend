@@ -1,6 +1,6 @@
-import { simpleRpcProvider } from 'utils/providers'
+import { getFaucetContract } from 'utils/contractHelpers'
 
-export async function callRelayer(walletAddress) {
+export async function callRelayer(walletAddress: string) {
   if (!walletAddress) throw new Error(`Address cannot be empty`)
   const url = process.env.REACT_APP_RELAYER_URL
   const request = { address: walletAddress }
@@ -27,4 +27,10 @@ export async function callRelayer(walletAddress) {
     .catch((error) => console.log(error))
 
   return thefetch
+}
+
+export async function checkFaucetSent(walletAddress: string) {
+  const faucetContract = getFaucetContract()
+  const faucetSent = await faucetContract.sent(walletAddress)
+  return faucetSent
 }
