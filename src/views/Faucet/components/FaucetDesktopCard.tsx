@@ -133,7 +133,10 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         </RowBetween> */}
         <RowBetween>
           <Text>{t('Amount Requested')}</Text>
-          <Text>{t('0.01 ROSE')}</Text>
+          <Text style={{ display: 'flex', alignItems: 'center' }}>
+            {t('0.01')}{' '}
+            <CurrencyLogo currency={ETHER} size="18px" style={{ marginLeft: 5, position: 'relative', top: 1 }} />
+          </Text>
         </RowBetween>
         <RowBetween>
           <Text>{t('%asset% Deposited', { asset: ETHER?.symbol })}</Text>
@@ -142,7 +145,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
               <Text>...</Text>
             ) : (
               <>
-                <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} />
+                {/* <CurrencyLogo currency={ETHER} style={{ marginRight: '8px' }} /> */}
                 <Text>{t('0.01')}</Text>
               </>
             )}
