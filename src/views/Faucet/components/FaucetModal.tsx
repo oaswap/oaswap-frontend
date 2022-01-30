@@ -176,7 +176,7 @@ const FaucetModal: React.FC<InjectedModalProps & ConfirmationModalProps> = ({
       {content()}
 
       <Flex justifyContent="center">
-        {hash === '' ? (
+        {attemptingTxn ? (
           <div style={{ marginTop: 20 }}>
             <Spinner size={48} />
           </div>
