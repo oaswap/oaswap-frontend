@@ -23,8 +23,7 @@ import useToast from 'hooks/useToast'
 import { FlexGap } from 'components/Layout/Flex'
 import Row, { RowBetween, RowFixed } from 'components/Layout/Row'
 import { AutoColumn } from 'components/Layout/Column'
-import TransactionConfirmationModal, { ConfirmationModalContent } from 'components/TransactionConfirmationModal'
-
+import FaucetModal, { FaucetConfirmationModalContent } from './FaucetModal'
 import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
@@ -107,7 +106,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
       <AutoColumn>
         <Flex alignItems="center">
           <Text fontSize="48px" marginRight="10px">
-            Waiting for confirmation
+            {!attemptingTxn ? <>Faucet request complete</> : <>Waiting for confirmation</>}
           </Text>
           {/* <CurrencyLogo currency={ETHER} /> */}
         </Flex>
@@ -115,7 +114,11 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
           <Text fontSize="24px">Transactions have been initiated.</Text>
         </Row> */}
         <Text small textAlign="left" mb="32px">
-          {t('Transactions have been initiated, waiting to confirm...')}
+          {!attemptingTxn ? (
+            <>Congratulations, 0.1 ROSE was sent to your account.</>
+          ) : (
+            <>{t('Transactions have been initiated, waiting to confirm...')}</>
+          )}
         </Text>
       </AutoColumn>
     )
@@ -134,7 +137,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         <RowBetween>
           <Text>{t('Total Deposited')}</Text>
           <RowFixed>
-            {!attemptingTxn ? (
+            {attemptingTxn ? (
               <Text>...</Text>
             ) : (
               <>
@@ -148,15 +151,20 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         </RowBetween>
         <RowBetween>
           <Text>{t('Transaction Hash')}</Text>
-          {!attemptingTxn ? (
+          {attemptingTxn ? (
             <>
               <Text>...</Text>
             </>
           ) : (
             <>
               <Text>
-                <a href={`https://explorer.emerald.oasis.dev/tx/${txHash}`} target="_blank" rel="noreferrer">
-                  {txHash.substring(0, 8)}
+                <a
+                  href={`https://explorer.emerald.oasis.dev/tx/${txHash}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: '#0092f6', textDecoration: 'underline' }}
+                >
+                  {txHash.substring(0, 12)}...
                 </a>
               </Text>
             </>
@@ -164,14 +172,14 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         </RowBetween>
 
         <Flex justifyContent="center">
-          {!attemptingTxn ? (
+          {attemptingTxn ? (
             <div style={{ marginTop: 20 }}>
               <Spinner size={48} />
             </div>
           ) : (
-            <>
-              <Button mt="20px">{t('Close')}</Button>
-            </>
+            <div style={{ marginTop: 20 }}>
+              <Button onClick={() => null}>{t('Close')}</Button>
+            </div>
           )}
         </Flex>
       </>
@@ -187,15 +195,15 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   }, [])
 
   const [onPresentFaucetModal] = useModal(
-    <TransactionConfirmationModal
+    <FaucetModal
       title={t('You are requesting ROSE')}
       customOnDismiss={handleDismissConfirmation}
       attemptingTxn={attemptingTxn}
       hash={txHash}
-      content={() => <ConfirmationModalContent topContent={modalHeader} bottomContent={modalBottom} />}
+      content={() => <FaucetConfirmationModalContent topContent={modalHeader} bottomContent={modalBottom} />}
       pendingText={t('Pending text here...')}
     />,
-    true,
+    false,
     true,
     'faucetConfirmationModal',
   )

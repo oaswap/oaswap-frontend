@@ -174,6 +174,7 @@ const FaucetModal: React.FC<InjectedModalProps & ConfirmationModalProps> = ({
   return (
     <Modal title={title} headerBackground="gradients.cardHeader" onDismiss={handleDismiss}>
       {content()}
+      <Button onClick={onDismiss}>fvsdkf</Button>
     </Modal>
   )
 }
