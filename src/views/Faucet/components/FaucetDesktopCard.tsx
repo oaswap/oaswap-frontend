@@ -28,7 +28,7 @@ import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
 import { FaucetAddressInput as AddressInput } from './FaucetAddressInput'
-import { callRelayer } from '../helpers'
+import { callRelayer, checkFaucetSent } from '../helpers'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
@@ -80,21 +80,25 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     const walletAddress = walletInput.current.value
 
     if (utils.isAddress(walletAddress)) {
-      setAttemptingTxn(true)
+      if (checkFaucetSent(walletAddress)) {
+        toastError(t('Error'), t('ROSE already sent to this address.'))
+      } else {
+        setAttemptingTxn(true)
 
-      try {
-        onPresentFaucetModal()
-        const response = await callRelayer(walletAddress)
-        console.log(response)
-        setTxHash(response.hash)
-        // toast('Transaction sent!', { type: 'info', onClick })
-        walletInput.current.value = ''
-      } catch (err: any) {
-        // toast(err.message || err, { type: 'error' })
-        toastError(t('Error'), err.message || err)
-        console.log('err', err)
-      } finally {
-        setAttemptingTxn(false)
+        try {
+          onPresentFaucetModal()
+          const response = await callRelayer(walletAddress)
+          console.log(response)
+          setTxHash(response.hash)
+          // toast('Transaction sent!', { type: 'info', onClick })
+          walletInput.current.value = ''
+        } catch (err: any) {
+          // toast(err.message || err, { type: 'error' })
+          toastError(t('Error'), err.message || err)
+          console.log('err', err)
+        } finally {
+          setAttemptingTxn(false)
+        }
       }
     } else {
       toastError(t('Error'), t('Invalid wallet address. Please try again.'))
