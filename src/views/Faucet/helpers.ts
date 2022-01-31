@@ -12,7 +12,7 @@ export async function callRelayer(walletAddress: string) {
     return response
   }
 
-  const thefetch = fetch(url, {
+  const fetchFaucet = fetch(url, {
     method: 'POST',
     mode: 'cors',
     body: JSON.stringify(request),
@@ -26,11 +26,32 @@ export async function callRelayer(walletAddress: string) {
     // .then(handleErrors)
     .catch((error) => console.log(error))
 
-  return thefetch
+  return fetchFaucet
 }
 
 export async function checkFaucetSent(walletAddress: string) {
   const faucetContract = getFaucetContract()
   const faucetSent = await faucetContract.sent(walletAddress)
   return faucetSent
+}
+
+export async function verifyToken(tokenString: string) {
+  if (!tokenString) throw new Error(`Token cannot be empty`)
+  const url = process.env.REACT_APP_VERIFY_RECAPTCHA
+  const request = { token: tokenString }
+
+  const fetchTokenVerify = fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    body: JSON.stringify(request),
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then((response) => response.text())
+    .then((response) => {
+      const jsonRes = JSON.parse(response)
+      return jsonRes
+    })
+    .catch((error) => console.log(error))
+
+  return fetchTokenVerify
 }
