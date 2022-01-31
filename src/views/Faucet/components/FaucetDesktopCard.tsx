@@ -1,4 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
 import { utils } from 'ethers'
 import styled from 'styled-components'
 import {
@@ -28,7 +29,7 @@ import { FaucetStyledCard } from './FaucetPoolCard/FaucetStyledCard'
 // import CardFooter from '../PoolCard/CardFooter'
 import FaucetPoolCardHeader, { FaucetPoolCardHeaderTitle } from './FaucetPoolCard/FaucetPoolCardHeader'
 import { FaucetAddressInput as AddressInput } from './FaucetAddressInput'
-import { callRelayer, checkFaucetSent } from '../helpers'
+import { callRelayer, checkFaucetSent, verifyToken } from '../helpers'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
@@ -200,6 +201,10 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     'faucetConfirmationModal',
   )
 
+  const onRecaptchaChange = (value: any) => {
+    verifyToken(value)
+  }
+
   return (
     <FaucetStyledCard isActive {...props}>
       <FaucetPoolCardHeader isStaking={false}>
@@ -228,7 +233,8 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
               </Container>
             </InputPanel>
           </Box>
-          <Flex flexDirection="column" alignItems="center">
+          <Flex flexDirection="row" alignItems="center" justifyContent="space-around">
+            <ReCAPTCHA sitekey="6LexakkeAAAAACW2wyy3apJrXp-TLRONZeo324uw" onChange={onRecaptchaChange} />
             {/* <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
               {t('Start earning')}
             </Text> */}
