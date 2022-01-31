@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <StyledHero>
       <Container>
-        <Flex alignItems="center" justifyContent="space-between">
+        <Flex alignItems="center" justifyContent="space-around">
           <Box pr="32px">
             <Heading as="h1" scale="xxl" color="secondary" mb="10px">
               {t('Rose Faucet')}
@@ -35,7 +35,7 @@ const Hero = () => {
               {t('Learn More')}
             </Button>
           </Box>
-          <FaucetImage src="/images/voting/voting-presents.png" width={361} height={214} />
+          <FaucetImage src="/images/faucet/faucet.png" width={190} height={215} />
         </Flex>
       </Container>
     </StyledHero>
