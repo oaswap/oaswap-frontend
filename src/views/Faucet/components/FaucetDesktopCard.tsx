@@ -201,8 +201,9 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
     'faucetConfirmationModal',
   )
 
-  const onRecaptchaChange = (value: any) => {
-    verifyToken(value)
+  const onRecaptchaChange = async (value: any) => {
+    const tokenVerify = await verifyToken(value)
+    console.log(tokenVerify)
   }
 
   return (
