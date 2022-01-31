@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, Heading, ProposalIcon } from '@oaswap/uikit'
+import { Box, Button, Flex, Heading, ResourcesIcon } from '@oaswap/uikit'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
@@ -20,18 +20,19 @@ const Hero = () => {
       <Container>
         <Flex alignItems="center" justifyContent="space-between">
           <Box pr="32px">
-            <Heading as="h1" scale="xxl" color="secondary" mb="16px">
-              {t('Voting')}
+            <Heading as="h1" scale="xxl" color="secondary" mb="10px">
+              {t('Rose Faucet')}
             </Heading>
-            <Heading as="h3" scale="lg" mb="16px">
-              {t('Have your say in the future of the PancakeSwap Ecosystem')}
+            <Heading as="h3" scale="lg" mb="18px">
+              {t('Request ROSE for an account on the Oasis Emerald ParaTime')}
             </Heading>
             <Button
-              startIcon={<ProposalIcon color="currentColor" width="24px" />}
-              as={Link}
-              to="/voting/proposal/create"
+              startIcon={<ResourcesIcon color="currentColor" width="24px" />}
+              as="a"
+              target="_blank"
+              href="https://docs.oaswap.finance/products/faucet"
             >
-              {t('Make a Proposal')}
+              {t('Learn More')}
             </Button>
           </Box>
           <FaucetImage src="/images/voting/voting-presents.png" width={361} height={214} />
