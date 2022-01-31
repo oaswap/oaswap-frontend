@@ -172,7 +172,7 @@ const FaucetModal: React.FC<InjectedModalProps & ConfirmationModalProps> = ({
   if (!chainId) return null
 
   return (
-    <Modal title={title} headerBackground="gradients.cardHeader" onDismiss={handleDismiss}>
+    <Modal title={title} headerBackground="gradients.cardHeader" onDismiss={handleDismiss} hideCloseButton>
       {content()}
 
       <Flex justifyContent="center">
