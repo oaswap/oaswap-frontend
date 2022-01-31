@@ -94,12 +94,15 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   }, [emptyToken, unverifiedToken])
 
   const callFaucetRelay = async (event) => {
-    console.log(walletInput.current.value)
+    // console.log(walletInput.current.value)
     event.preventDefault()
     const walletAddress = walletInput.current.value
 
     if (utils.isAddress(walletAddress)) {
-      if (checkFaucetSent(walletAddress)) {
+      const faucetSent = await checkFaucetSent(walletAddress)
+
+      if (faucetSent) {
+        // console.log(faucetSent)
         toastError(t('Error'), t('ROSE already sent to this address.'))
       } else {
         setAttemptingTxn(true)
