@@ -26,9 +26,9 @@ const Faucet = () => {
         <Content>
           <FaucetRequest />
         </Content>
-        <Chrome>
+        {/* <Chrome>
           <Footer />
-        </Chrome>
+        </Chrome> */}
       </Flex>
     </>
   )
