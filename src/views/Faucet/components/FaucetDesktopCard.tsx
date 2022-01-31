@@ -33,6 +33,16 @@ import { callRelayer, checkFaucetSent, verifyToken } from '../helpers'
 
 const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
+
+  @media (max-width: 768px) {
+    & #recaptcha_submit {
+      flex-direction: column;
+
+      & .recaptcha-box {
+        margin-bottom: 20px;
+      }
+    }
+  }
 `
 
 const InputRow = styled.div<{ selected?: boolean }>`
@@ -128,7 +138,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
         </Row> */}
         <Text small textAlign="left" mb="32px">
           {!attemptingTxn ? (
-            <span style={{ color: '#1fc7d4' }}>Congratulations, 0.1 ROSE was sent to your account.</span>
+            <span style={{ color: '#1fc7d4' }}>Congratulations, 0.01 ROSE was sent to your account.</span>
           ) : (
             <span style={{ color: '#B8ADD2' }}>{t('Transactions have been initiated, waiting to confirm...')}</span>
           )}
@@ -224,7 +234,10 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   return (
     <FaucetStyledCard isActive {...props}>
       <FaucetPoolCardHeader isStaking={false}>
-        <FaucetPoolCardHeaderTitle title={t('card header title')} subTitle={t('card subtitle')} />
+        <FaucetPoolCardHeaderTitle
+          title={t('Request 0.01 ROSE')}
+          subTitle={t('Only one request per account allowed')}
+        />
         <TokenImage
           src="https://secureservercdn.net/160.153.137.210/mbu.abb.myftpupload.com/wp-content/uploads/2021/07/52803776.png"
           width={64}
@@ -233,10 +246,10 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
       </FaucetPoolCardHeader>
       <StyledCardBody isLoading={false}>
         <FlexGap mt="16px" gap="24px" flexDirection={false ? 'column-reverse' : 'column'}>
-          <Box>
-            <Box mt="24px">24px box</Box>
+          {/* <Box>
+            <Box mt="0">24px box</Box>
             <Box mt="8px">8px box</Box>
-          </Box>
+          </Box> */}
           <Box>
             <InputPanel>
               <Container>
@@ -245,15 +258,19 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
                     <AddressInput className="token-amount-input" walletInput={walletInput} />
                   </RowBetween>
                 </LabelRow>
-                <InputRow>input row</InputRow>
+                <InputRow>Enter your address</InputRow>
               </Container>
             </InputPanel>
           </Box>
-          <Flex flexDirection="row" alignItems="center" justifyContent="space-around">
-            <ReCAPTCHA sitekey="6LexakkeAAAAACW2wyy3apJrXp-TLRONZeo324uw" onChange={onRecaptchaChange} />
+          <Flex id="recaptcha_submit" flexDirection="row" alignItems="center" justifyContent="space-around">
             {/* <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
               {t('Start earning')}
             </Text> */}
+            <ReCAPTCHA
+              className="recaptcha-box"
+              sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+              onChange={onRecaptchaChange}
+            />
             <Button onClick={callFaucetRelay} disabled={emptyToken === null || unverifiedToken || attemptingTxn}>
               {t('Send Request')}
             </Button>
