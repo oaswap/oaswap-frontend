@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { utils } from 'ethers'
 import styled from 'styled-components'
@@ -74,6 +74,14 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const walletInput = useRef<HTMLInputElement>(null)
   const [attemptingTxn, setAttemptingTxn] = useState<boolean>(false)
   const [txHash, setTxHash] = useState<string>('')
+  const [unverifiedToken, setUnverifiedToken] = useState<boolean>(true)
+  const [emptyToken, setEmptyToken] = useState<string>(null)
+
+  useEffect(() => {
+    if (emptyToken === null && unverifiedToken === false) {
+      setUnverifiedToken(true)
+    }
+  }, [emptyToken, unverifiedToken])
 
   const callFaucetRelay = async (event) => {
     console.log(walletInput.current.value)
@@ -202,8 +210,15 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   )
 
   const onRecaptchaChange = async (value: any) => {
-    const tokenVerify = await verifyToken(value)
-    console.log(tokenVerify)
+    setEmptyToken(value)
+
+    if (value !== null) {
+      const tokenVerify = await verifyToken(value)
+
+      if (tokenVerify.success === true) {
+        setUnverifiedToken(false)
+      }
+    }
   }
 
   return (
@@ -239,7 +254,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
             {/* <Text mb="10px" textTransform="uppercase" fontSize="12px" color="textSubtle" bold>
               {t('Start earning')}
             </Text> */}
-            <Button onClick={callFaucetRelay} disabled={attemptingTxn}>
+            <Button onClick={callFaucetRelay} disabled={emptyToken === null || unverifiedToken || attemptingTxn}>
               {t('Send Request')}
             </Button>
           </Flex>
