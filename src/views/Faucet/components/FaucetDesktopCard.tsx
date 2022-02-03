@@ -225,13 +225,13 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
   const onRecaptchaChange = async (value: any) => {
     setEmptyToken(value)
 
-    if (value !== null) {
-      const tokenVerify = await verifyToken(value)
+    // if (value !== null) {
+    //   const tokenVerify = await verifyToken(value)
 
-      if (tokenVerify.success === true) {
-        setUnverifiedToken(false)
-      }
-    }
+    //   if (tokenVerify.success === true) {
+    //     setUnverifiedToken(false)
+    //   }
+    // }
   }
 
   return (
@@ -274,7 +274,7 @@ const FaucetDesktopCard: React.FC<CardProps> = ({ ...props }) => {
               sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
               onChange={onRecaptchaChange}
             />
-            <Button onClick={callFaucetRelay} disabled={emptyToken === null || unverifiedToken || attemptingTxn}>
+            <Button onClick={callFaucetRelay} disabled={emptyToken === null || attemptingTxn}>
               {t('Send Request')}
             </Button>
           </Flex>
