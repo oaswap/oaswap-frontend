@@ -1,9 +1,9 @@
 import { getFaucetContract } from 'utils/contractHelpers'
 
-export async function callRelayer(walletAddress: string) {
+export async function callRelayer(walletAddress: string, recaptchaToken: string) {
   if (!walletAddress) throw new Error(`Address cannot be empty`)
   const url = process.env.REACT_APP_RELAYER_URL
-  const request = { address: walletAddress }
+  const request = { address: walletAddress, recaptcha: recaptchaToken }
 
   const handleErrors = (response) => {
     // if (!response.ok) {
