@@ -93,10 +93,10 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     icon: 'More',
     hideSubNav: true,
     items: [
-      {
-        label: t('Faucet'),
-        href: '/faucet',
-      },
+      // {
+      //   label: t('Faucet'),
+      //   href: '/faucet',
+      // },
       // {
       //   label: t('Info'),
       //   href: '/info',
@@ -116,17 +116,17 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       //   label: t('Leaderboard'),
       //   href: '/teams',
       // },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: t('Bridge'),
-        href: 'https://wormholebridge.com/#/transfer',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
+      // {
+      //   type: DropdownMenuItemType.DIVIDER,
+      // },
+      // {
+      //   label: t('Bridge'),
+      //   href: 'https://wormholebridge.com/#/transfer',
+      //   type: DropdownMenuItemType.EXTERNAL_LINK,
+      // },
+      // {
+      //   type: DropdownMenuItemType.DIVIDER,
+      // },
       {
         label: t('Blog'),
         href: 'https://oaswap.medium.com',
