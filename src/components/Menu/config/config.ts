@@ -36,6 +36,13 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       },
     ],
   },
+  {
+    label: t('Bridge'),
+    href: 'https://wormholebridge.com/#/transfer',
+    icon: 'Bridge',
+    items: [],
+    absoluteLink: true,
+  },
   // {
   //   label: t('Win'),
   //   href: '/prediction',
