@@ -43,6 +43,12 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     items: [],
     absoluteLink: true,
   },
+  {
+    label: t('Faucet'),
+    href: '/faucet',
+    icon: 'Faucet',
+    items: [],
+  },
   // {
   //   label: t('Win'),
   //   href: '/prediction',
