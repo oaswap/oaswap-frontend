@@ -2181,18 +2181,6 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@oaswap/uikit@^0.17.3":
-  version "0.17.3"
-  resolved "https://registry.yarnpkg.com/@oaswap/uikit/-/uikit-0.17.3.tgz#925c0405e59b947d6ffc5f0cde3b512ee6006fe3"
-  integrity sha512-sm/HMf992J3su1xZTwcCsQ8KiPIb/WqEoEp/hk2b3Rd+p5rdzNE2Uw7ioxsi5bXKvnDv9di/H6a10v6QhdRHxA==
-  dependencies:
-    "@popperjs/core" "^2.9.2"
-    "@types/lodash" "^4.14.168"
-    "@types/styled-system" "^5.1.10"
-    lodash "^4.17.20"
-    react-popper "^2.2.5"
-    styled-system "^5.1.5"
-
 "@pancakeswap-libs/pancake-swap-core@^0.1.0":
   version "0.1.0"
   resolved "https://registry.npmjs.org/@pancakeswap-libs/pancake-swap-core/-/pancake-swap-core-0.1.0.tgz"
