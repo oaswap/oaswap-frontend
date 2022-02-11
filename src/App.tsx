@@ -23,6 +23,7 @@ import history from './routerHistory'
 import Pools from './views/Pools'
 import Swap from './views/Swap'
 import Faucet from './views/Faucet'
+import Vaults from './views/Vaults'
 import {
   RedirectDuplicateTokenIds,
   RedirectOldAddLiquidityPathStructure,
