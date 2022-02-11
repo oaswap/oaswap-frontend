@@ -95,6 +95,9 @@ const App: React.FC = () => {
             <Route path="/pools">
               <Pools />
             </Route>
+            <Route path="/vaults">
+              <Vaults />
+            </Route>
             <Route path="/faucet">
               <Faucet />
             </Route>
