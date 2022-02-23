@@ -91,6 +91,11 @@ function CurrencySearch({
 
   const handleInput = useCallback((event) => {
     const input = event.target.value
+
+    if (input === '0xdf91925790dD58cE25A6dEd4c532859BaD24850B') {
+      return
+    }
+
     const checksummedInput = isAddress(input)
     setSearchQuery(checksummedInput || input)
     fixedList.current?.scrollTo(0)
