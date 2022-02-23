@@ -100,7 +100,7 @@ function CurrencySearch({
     (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
         const s = debouncedQuery.toLowerCase().trim()
-        if (s === 'bnb') {
+        if (s === 'rose') {
           handleCurrencySelect(ETHER)
         } else if (filteredSortedTokens.length > 0) {
           if (
