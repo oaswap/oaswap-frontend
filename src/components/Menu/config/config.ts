@@ -34,10 +34,10 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
         label: t('Pools'),
         href: '/pools',
       },
-      {
-        label: t('Auto Vaults'),
-        href: '/vaults',
-      },
+      // {
+      //   label: t('Auto Vaults'),
+      //   href: '/vaults',
+      // },
     ],
   },
   {
