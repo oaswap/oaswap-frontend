@@ -8,7 +8,8 @@ import { useMasterchef, useSousChef } from 'hooks/useContract'
 import getGasPrice from 'utils/getGasPrice'
 
 const sousUnstake = async (sousChefContract: any, amount: string, decimals: number) => {
-  const gasPrice = getGasPrice()
+  // const gasPrice = getGasPrice()
+  const gasPrice = '10000000000'
   const units = parseUnits(amount, decimals)
 
   const tx = await sousChefContract.withdraw(units.toString(), {
@@ -19,7 +20,8 @@ const sousUnstake = async (sousChefContract: any, amount: string, decimals: numb
 }
 
 const sousEmergencyUnstake = async (sousChefContract: any) => {
-  const gasPrice = getGasPrice()
+  // const gasPrice = getGasPrice()
+  const gasPrice = '10000000000'
   const tx = await sousChefContract.emergencyWithdraw({ gasPrice })
   const receipt = await tx.wait()
   return receipt.status
