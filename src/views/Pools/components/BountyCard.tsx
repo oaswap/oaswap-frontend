@@ -70,7 +70,7 @@ const BountyCard = () => {
   return (
     <>
       {tooltipVisible && tooltip}
-      <StyledCard>
+      {/* <StyledCard>
         <CardBody>
           <Flex flexDirection="column">
             <Flex alignItems="center" mb="12px">
@@ -114,7 +114,7 @@ const BountyCard = () => {
             </Button>
           </Flex>
         </CardBody>
-      </StyledCard>
+      </StyledCard> */}
     </>
   )
 }
