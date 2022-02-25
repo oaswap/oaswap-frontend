@@ -83,7 +83,7 @@ export const usePollCoreFarmData = () => {
 
   useEffect(() => {
     // dispatch(fetchFarmsPublicDataAsync([251, 252]))
-    dispatch(fetchFarmsPublicDataAsync([3]))
+    dispatch(fetchFarmsPublicDataAsync([1]))
   }, [dispatch, fastRefresh])
 }
 
@@ -148,7 +148,7 @@ export const useLpTokenPrice = (symbol: string) => {
  */
 export const usePriceCakeBusd = (): BigNumber => {
   // const cakeBnbFarm = useFarmFromPid(251)
-  const cakeBnbFarm = useFarmFromPid(3)
+  const cakeBnbFarm = useFarmFromPid(1)
 
   const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
 
