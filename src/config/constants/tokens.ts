@@ -21,7 +21,7 @@ export const mainnetTokens = defineTokens({
   ),
   oas: new Token(
     MAINNET,
-    '0x6D906f979ab61d43921212895F25FEcBCd2750E7',
+    '0xa5cDb80c5C5e87f3Ce8670De3b9F7E90d222f02c',
     18,
     'OAS',
     'Oaswap Token',
@@ -122,7 +122,7 @@ export const testnetTokens = defineTokens({
   ),
   oas: new Token(
     TESTNET,
-    '0x78899197b5462d56e24389F17afbfE4F91534E15',
+    '0x2fCcAb6DC30625adCC02629D95D08c154E369199',
     18,
     'OAS',
     'Oaswap Token',
