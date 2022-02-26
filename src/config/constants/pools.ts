@@ -33,13 +33,13 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.oas,
     earningToken: serializedTokens.oas,
     contractAddress: {
-      4: '0x1588e99741Dba92A3779C77fa0325AD855E44e0e',
+      4: '0xD273Ee04770fd135782A73F1eE5d24171318D44d',
       56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E', // MasterChef
-      42262: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a', // Needs update
+      42262: '0x30da5CE588bD9132323929E60b596E41ad51C2C1', // OaswapChef
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
-    tokenPerBlock: '10',
+    tokenPerBlock: '0.00092333',
     sortOrder: 1,
     isFinished: false,
   },
