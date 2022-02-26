@@ -3,6 +3,7 @@ import { BIG_ONE, BIG_ZERO } from 'utils/bigNumber'
 import { filterFarmsByQuoteToken } from 'utils/farmsPriceHelpers'
 import { SerializedFarm } from 'state/types'
 import tokens from 'config/constants/tokens'
+import axios from 'axios'
 
 const getFarmFromTokenSymbol = (
   farms: SerializedFarm[],
@@ -86,8 +87,11 @@ const getFarmQuoteTokenPrice = (
 }
 
 const fetchFarmsPrices = async (farms: SerializedFarm[]) => {
-  const bnbBusdFarm = farms.find((farm) => farm.pid === 3)
-  const bnbPriceBusd = bnbBusdFarm.tokenPriceVsQuote ? BIG_ONE.div(bnbBusdFarm.tokenPriceVsQuote) : BIG_ZERO
+  // const bnbBusdFarm = farms.find((farm) => farm.pid === 1)
+  // const bnbPriceBusd = bnbBusdFarm.tokenPriceVsQuote ? BIG_ONE.div(bnbBusdFarm.tokenPriceVsQuote) : BIG_ZERO
+
+  const rosePrice = await getRosePrice()
+  const bnbPriceBusd = new BigNumber(rosePrice)
 
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol)
@@ -104,6 +108,12 @@ const fetchFarmsPrices = async (farms: SerializedFarm[]) => {
   })
 
   return farmsWithPrices
+}
+
+const getRosePrice = async () => {
+  const resp = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=oasis-network&vs_currencies=usd`)
+  const tokenPrice: number = resp.data['oasis-network'].usd
+  return tokenPrice
 }
 
 export default fetchFarmsPrices
