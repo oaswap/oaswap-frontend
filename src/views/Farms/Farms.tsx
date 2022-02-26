@@ -372,8 +372,6 @@ const Farms: React.FC = () => {
       <PageHeader>
         <Heading as="h1" scale="xxl" color="secondary" mb="24px">
           {t('Farms')}
-          <br />
-          <span style={{ fontSize: 36 }}>(Not Live Yet)</span>
         </Heading>
         <Heading scale="lg" color="text">
           {t('Stake LP tokens to earn.')}
