@@ -65,7 +65,7 @@ export const mainnetTokens = defineTokens({
     MAINNET,
     // '0x55d398326f99059fF775485246999027B3197955',
     '0xdC19A122e268128B5eE20366299fc7b5b199C8e3',
-    18,
+    6,
     'USDT',
     'Tether USD',
     'https://tether.to/',
@@ -169,6 +169,7 @@ export const testnetTokens = defineTokens({
     'Bakeryswap Token',
     'https://www.bakeryswap.org/',
   ),
+  usdt: new Token(TESTNET, '0xdC19A122e268128B5eE20366299fc7b5b199C8e3', 6, 'USDT', 'Tether USD', 'https://tether.to/'),
 } as const)
 
 const tokens = () => {
