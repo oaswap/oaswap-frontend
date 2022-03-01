@@ -67,6 +67,10 @@ const getFarmQuoteTokenPrice = (
     return BIG_ONE
   }
 
+  if (farm.quoteToken.symbol === 'USDT') {
+    return BIG_ONE
+  }
+
   if (farm.quoteToken.symbol === 'WROSE') {
     return bnbPriceBusd
   }
@@ -80,6 +84,10 @@ const getFarmQuoteTokenPrice = (
   }
 
   if (quoteTokenFarm.quoteToken.symbol === 'BUSD') {
+    return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
+  }
+
+  if (quoteTokenFarm.quoteToken.symbol === 'USDT') {
     return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
