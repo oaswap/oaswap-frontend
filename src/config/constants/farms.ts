@@ -50,6 +50,17 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.oas,
     quoteToken: serializedTokens.usdt,
   },
+  {
+    pid: 3,
+    lpSymbol: 'OAS-USDC LP',
+    lpAddresses: {
+      4: '0x2b6CF4939f7baF46CA08AC1cDC8086AcE077432c', // WETH-LOCK Sushi LP Token
+      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+      42262: '0xFb911245a8bC27A38883F1c81C47655B8fDf8B96', // Oaswap LP Token
+    },
+    token: serializedTokens.oas,
+    quoteToken: serializedTokens.usdc,
+  },
   // {
   //   pid: 252,
   //   lpSymbol: 'BUSD-BNB LP',
