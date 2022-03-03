@@ -25,6 +25,14 @@
       "chainId": 42262,
       "decimals": 18,
       "logoURI": "https://oaswap.finance/images/tokens/0xDfd7c87F6a44E3d7cb2aAf16825e21D6d5F05817.png"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0xdC19A122e268128B5eE20366299fc7b5b199C8e3",
+      "chainId": 42262,
+      "decimals": 6,
+      "logoURI": "https://oaswap.finance/images/tokens/0xdC19A122e268128B5eE20366299fc7b5b199C8e3.png"
     }
   ]
 }
