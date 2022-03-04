@@ -12,7 +12,7 @@ type ChainTokenList = {
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.MAINNET]: [
     mainnetTokens.wrose,
-    mainnetTokens.usdt,
+    mainnetTokens.usdtet,
     // mainnetTokens.cake,
     // mainnetTokens.busd,
     // mainnetTokens.btcb,
@@ -49,15 +49,15 @@ export const SUGGESTED_BASES: ChainTokenList = {
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  [ChainId.MAINNET]: [mainnetTokens.wrose, mainnetTokens.dai, mainnetTokens.busd, mainnetTokens.usdt],
+  [ChainId.MAINNET]: [mainnetTokens.wrose, mainnetTokens.dai, mainnetTokens.busd, mainnetTokens.usdtet],
   [ChainId.TESTNET]: [testnetTokens.wrose, testnetTokens.cake, testnetTokens.busd],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.MAINNET]: [
     [mainnetTokens.cake, mainnetTokens.wbnb],
-    [mainnetTokens.busd, mainnetTokens.usdt],
-    [mainnetTokens.dai, mainnetTokens.usdt],
+    [mainnetTokens.busd, mainnetTokens.usdtet],
+    [mainnetTokens.dai, mainnetTokens.usdtet],
   ],
 }
 
