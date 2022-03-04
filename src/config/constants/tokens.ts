@@ -66,8 +66,8 @@ export const mainnetTokens = defineTokens({
     // '0x55d398326f99059fF775485246999027B3197955',
     '0xdC19A122e268128B5eE20366299fc7b5b199C8e3',
     6,
-    'USDT',
-    'Tether USD',
+    'USDTet',
+    'Tether USD (Wormhole)',
     'https://tether.to/',
   ),
   btcb: new Token(
