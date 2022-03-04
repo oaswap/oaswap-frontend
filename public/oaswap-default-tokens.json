@@ -33,6 +33,14 @@
       "chainId": 42262,
       "decimals": 6,
       "logoURI": "https://oaswap.finance/images/tokens/0xdC19A122e268128B5eE20366299fc7b5b199C8e3.png"
+    },
+    {
+      "name": "USD Coin (Wormhole)",
+      "symbol": "USDCet",
+      "address": "0xE8A638b3B7565Ee7c5eb9755E58552aFc87b94DD",
+      "chainId": 42262,
+      "decimals": 6,
+      "logoURI": "https://oaswap.finance/images/tokens/0xE8A638b3B7565Ee7c5eb9755E58552aFc87b94DD.png"
     }
   ]
 }
