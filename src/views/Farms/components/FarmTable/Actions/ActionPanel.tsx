@@ -143,7 +143,8 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   const { t } = useTranslation()
   const isActive = farm.multiplier !== '0X'
   const { quoteToken, token, dual } = farm
-  const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('PANCAKE', '')
+  // const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('PANCAKE', '')
+  const lpLabel = farm.lpSymbol && farm.lpSymbol.replace('PANCAKE', '')
   const liquidityUrlPathParts = getLiquidityUrlPathParts({
     quoteTokenAddress: quoteToken.address,
     tokenAddress: token.address,
