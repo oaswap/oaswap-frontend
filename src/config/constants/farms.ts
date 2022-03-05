@@ -41,25 +41,47 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 2,
-    lpSymbol: 'OAS-USDT LP',
+    lpSymbol: 'OAS-USDTet LP',
     lpAddresses: {
       4: '0x2b6CF4939f7baF46CA08AC1cDC8086AcE077432c', // WETH-LOCK Sushi LP Token
       56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
       42262: '0xFb911245a8bC27A38883F1c81C47655B8fDf8B96', // Oaswap LP Token
     },
     token: serializedTokens.oas,
-    quoteToken: serializedTokens.usdt,
+    quoteToken: serializedTokens.usdtet,
   },
   {
     pid: 3,
-    lpSymbol: 'OAS-USDC LP',
+    lpSymbol: 'USDTet-ROSE LP',
     lpAddresses: {
       4: '0x2b6CF4939f7baF46CA08AC1cDC8086AcE077432c', // WETH-LOCK Sushi LP Token
       56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
-      42262: '0xFb911245a8bC27A38883F1c81C47655B8fDf8B96', // Oaswap LP Token
+      42262: '0xBF49b1b214ca29d12Fcab6918eE79b6a52A1D2Ac', // Oaswap LP Token
     },
-    token: serializedTokens.oas,
-    quoteToken: serializedTokens.usdc,
+    token: serializedTokens.usdtet,
+    quoteToken: serializedTokens.wrose,
+  },
+  {
+    pid: 4,
+    lpSymbol: 'USDCet-ROSE LP',
+    lpAddresses: {
+      4: '0x2b6CF4939f7baF46CA08AC1cDC8086AcE077432c', // WETH-LOCK Sushi LP Token
+      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+      42262: '0x9148b63658DD5d0B3062A02Acd456238655fdF16', // Oaswap LP Token
+    },
+    token: serializedTokens.usdcet,
+    quoteToken: serializedTokens.wrose,
+  },
+  {
+    pid: 5,
+    lpSymbol: 'USDTet-USDCet LP',
+    lpAddresses: {
+      4: '0x2b6CF4939f7baF46CA08AC1cDC8086AcE077432c', // WETH-LOCK Sushi LP Token
+      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+      42262: '0x4c24b99CC76Fac65eBaBDB0a71c9004852e5523c', // Oaswap LP Token
+    },
+    token: serializedTokens.usdtet,
+    quoteToken: serializedTokens.usdcet,
   },
   // {
   //   pid: 252,
