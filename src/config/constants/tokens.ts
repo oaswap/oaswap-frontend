@@ -61,7 +61,7 @@ export const mainnetTokens = defineTokens({
     'Dai Stablecoin',
     'https://www.makerdao.com/',
   ),
-  usdt: new Token(
+  usdtet: new Token(
     MAINNET,
     // '0x55d398326f99059fF775485246999027B3197955',
     '0xdC19A122e268128B5eE20366299fc7b5b199C8e3',
@@ -94,13 +94,13 @@ export const mainnetTokens = defineTokens({
     'Binance-Peg Ethereum Token',
     'https://ethereum.org/en/',
   ),
-  usdc: new Token(
+  usdcet: new Token(
     MAINNET,
     // '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
     '0xE8A638b3B7565Ee7c5eb9755E58552aFc87b94DD',
     6,
-    'USDC',
-    'USD Coin',
+    'USDCet',
+    'USD Coin (Wormhole)',
     'https://www.centre.io/usdc',
   ),
   syrup: new Token(
@@ -170,7 +170,23 @@ export const testnetTokens = defineTokens({
     'Bakeryswap Token',
     'https://www.bakeryswap.org/',
   ),
-  usdt: new Token(TESTNET, '0xdC19A122e268128B5eE20366299fc7b5b199C8e3', 6, 'USDT', 'Tether USD', 'https://tether.to/'),
+  usdtet: new Token(
+    TESTNET,
+    '0xdC19A122e268128B5eE20366299fc7b5b199C8e3',
+    6,
+    'USDTet',
+    'Tether USD (Wormhole)',
+    'https://tether.to/',
+  ),
+  usdcet: new Token(
+    TESTNET,
+    // '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+    '0xE8A638b3B7565Ee7c5eb9755E58552aFc87b94DD',
+    6,
+    'USDCet',
+    'USD Coin (Wormhole)',
+    'https://www.centre.io/usdc',
+  ),
 } as const)
 
 const tokens = () => {
