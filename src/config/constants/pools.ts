@@ -8,7 +8,7 @@ export const vaultPoolConfig = {
   [VaultKey.CakeVault]: {
     name: 'Auto OAS',
     description: 'Automatic restaking',
-    autoCompoundFrequency: 5000,
+    autoCompoundFrequency: 1000,
     gasLimit: 380000,
     tokenImage: {
       primarySrc: `/images/tokens/${tokens.oas.address}.svg`,
@@ -39,7 +39,7 @@ const pools: SerializedPoolConfig[] = [
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
-    tokenPerBlock: '0.00092333',
+    tokenPerBlock: '0.014615',
     sortOrder: 1,
     isFinished: false,
   },
