@@ -67,11 +67,11 @@ const getFarmQuoteTokenPrice = (
     return BIG_ONE
   }
 
-  if (farm.quoteToken.symbol === 'USDT') {
+  if (farm.quoteToken.symbol === 'USDTet') {
     return BIG_ONE
   }
 
-  if (farm.quoteToken.symbol === 'USDC') {
+  if (farm.quoteToken.symbol === 'USDCet') {
     return BIG_ONE
   }
 
@@ -91,11 +91,11 @@ const getFarmQuoteTokenPrice = (
     return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'USDT') {
+  if (quoteTokenFarm.quoteToken.symbol === 'USDTet') {
     return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
-  if (quoteTokenFarm.quoteToken.symbol === 'USDC') {
+  if (quoteTokenFarm.quoteToken.symbol === 'USDCet') {
     return quoteTokenFarm.tokenPriceVsQuote ? new BigNumber(quoteTokenFarm.tokenPriceVsQuote) : BIG_ZERO
   }
 
