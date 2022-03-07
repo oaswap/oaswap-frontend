@@ -41,6 +41,14 @@
       "chainId": 42262,
       "decimals": 6,
       "logoURI": "https://oaswap.finance/images/tokens/0xE8A638b3B7565Ee7c5eb9755E58552aFc87b94DD.png"
+    },
+    {
+      "name": "Wrapped Ether (Wormhole)",
+      "symbol": "ETH",
+      "address": "0x3223f17957Ba502cbe71401D55A0DB26E5F7c68F",
+      "chainId": 42262,
+      "decimals": 18,
+      "logoURI": "https://oaswap.finance/images/tokens/0x3223f17957Ba502cbe71401D55A0DB26E5F7c68F.png"
     }
   ]
 }
