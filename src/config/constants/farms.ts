@@ -83,6 +83,17 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.usdtet,
     quoteToken: serializedTokens.usdcet,
   },
+  {
+    pid: 6,
+    lpSymbol: 'ETH-ROSE LP',
+    lpAddresses: {
+      4: '0x2b6CF4939f7baF46CA08AC1cDC8086AcE077432c', // WETH-LOCK Sushi LP Token
+      56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+      42262: '0xcDB4198Fd739B768aa816A3068662abE958Fa6c4', // Oaswap LP Token
+    },
+    token: serializedTokens.eth,
+    quoteToken: serializedTokens.wrose,
+  },
   // {
   //   pid: 252,
   //   lpSymbol: 'BUSD-BNB LP',
