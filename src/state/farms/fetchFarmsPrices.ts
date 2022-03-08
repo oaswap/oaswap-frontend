@@ -126,7 +126,7 @@ const fetchFarmsPrices = async (farms: SerializedFarm[]) => {
   return farmsWithPrices
 }
 
-const getRosePrice = async () => {
+export const getRosePrice = async () => {
   const resp = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=oasis-network&vs_currencies=usd`)
   const tokenPrice: number = resp.data['oasis-network'].usd
   return tokenPrice
