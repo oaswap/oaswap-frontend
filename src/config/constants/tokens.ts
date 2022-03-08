@@ -88,10 +88,11 @@ export const mainnetTokens = defineTokens({
   ),
   eth: new Token(
     MAINNET,
-    '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+    // '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+    '0x3223f17957Ba502cbe71401D55A0DB26E5F7c68F',
     18,
     'ETH',
-    'Binance-Peg Ethereum Token',
+    'Wrapped Ether (Wormhole)',
     'https://ethereum.org/en/',
   ),
   usdcet: new Token(
@@ -186,6 +187,15 @@ export const testnetTokens = defineTokens({
     'USDCet',
     'USD Coin (Wormhole)',
     'https://www.centre.io/usdc',
+  ),
+  eth: new Token(
+    MAINNET,
+    // '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+    '0x3223f17957Ba502cbe71401D55A0DB26E5F7c68F',
+    18,
+    'ETH',
+    'Wrapped Ether (Wormhole)',
+    'https://ethereum.org/en/',
   ),
 } as const)
 
