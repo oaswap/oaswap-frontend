@@ -84,8 +84,8 @@ export const mainnetTokens = defineTokens({
     '0xa1E73c01E0cF7930F5e91CB291031739FE5Ad6C2',
     6,
     'UST',
-    'Wrapped UST Token',
-    'https://mirror.finance/',
+    'Wrapped TerraUSD (Wormhole)',
+    'https://terra.money/',
   ),
   eth: new Token(
     MAINNET,
@@ -204,8 +204,8 @@ export const testnetTokens = defineTokens({
     '0xa1E73c01E0cF7930F5e91CB291031739FE5Ad6C2',
     6,
     'UST',
-    'Wrapped UST Token',
-    'https://mirror.finance/',
+    'Wrapped TerraUSD (Wormhole)',
+    'https://terra.money/',
   ),
 } as const)
 
