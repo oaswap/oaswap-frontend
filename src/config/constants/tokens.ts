@@ -80,8 +80,9 @@ export const mainnetTokens = defineTokens({
   ),
   ust: new Token(
     MAINNET,
-    '0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
-    18,
+    // '0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
+    '0xa1E73c01E0cF7930F5e91CB291031739FE5Ad6C2',
+    6,
     'UST',
     'Wrapped UST Token',
     'https://mirror.finance/',
@@ -189,13 +190,22 @@ export const testnetTokens = defineTokens({
     'https://www.centre.io/usdc',
   ),
   eth: new Token(
-    MAINNET,
+    TESTNET,
     // '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
     '0x3223f17957Ba502cbe71401D55A0DB26E5F7c68F',
     18,
     'ETH',
     'Wrapped Ether (Wormhole)',
     'https://ethereum.org/en/',
+  ),
+  ust: new Token(
+    TESTNET,
+    // '0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
+    '0xa1E73c01E0cF7930F5e91CB291031739FE5Ad6C2',
+    6,
+    'UST',
+    'Wrapped UST Token',
+    'https://mirror.finance/',
   ),
 } as const)
 
