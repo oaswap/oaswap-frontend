@@ -113,6 +113,14 @@ export const mainnetTokens = defineTokens({
     'SyrupBar Token',
     'https://pancakeswap.finance/',
   ),
+  luna: new Token(
+    MAINNET,
+    '0x4F43717B20ae319Aa50BC5B2349B93af5f7Ac823',
+    6,
+    'LUNA',
+    'Terra Luna (Wormhole)',
+    'https://terra.money/',
+  ),
 } as const)
 
 export const testnetTokens = defineTokens({
@@ -205,6 +213,14 @@ export const testnetTokens = defineTokens({
     6,
     'UST',
     'Wrapped TerraUSD (Wormhole)',
+    'https://terra.money/',
+  ),
+  luna: new Token(
+    TESTNET,
+    '0x4F43717B20ae319Aa50BC5B2349B93af5f7Ac823',
+    6,
+    'LUNA',
+    'Terra Luna (Wormhole)',
     'https://terra.money/',
   ),
 } as const)
