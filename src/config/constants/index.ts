@@ -11,12 +11,13 @@ type ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.MAINNET]: [
+    mainnetTokens.oas,
     mainnetTokens.wrose,
     mainnetTokens.usdtet,
     // mainnetTokens.cake,
     // mainnetTokens.busd,
     // mainnetTokens.btcb,
-    // mainnetTokens.ust,
+    mainnetTokens.ust,
     mainnetTokens.eth,
     mainnetTokens.usdcet,
   ],
