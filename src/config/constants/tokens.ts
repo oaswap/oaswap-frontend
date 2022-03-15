@@ -121,6 +121,14 @@ export const mainnetTokens = defineTokens({
     'Terra Luna (Wormhole)',
     'https://terra.money/',
   ),
+  wbtc: new Token(
+    MAINNET,
+    '0xd43ce0aa2a29DCb75bDb83085703dc589DE6C7eb',
+    8,
+    'WBTC',
+    'Wrapped BTC (Wormhole)',
+    'https://bitcoin.org/',
+  ),
 } as const)
 
 export const testnetTokens = defineTokens({
@@ -222,6 +230,14 @@ export const testnetTokens = defineTokens({
     'LUNA',
     'Terra Luna (Wormhole)',
     'https://terra.money/',
+  ),
+  wbtc: new Token(
+    TESTNET,
+    '0xd43ce0aa2a29DCb75bDb83085703dc589DE6C7eb',
+    8,
+    'WBTC',
+    'Wrapped BTC (Wormhole)',
+    'https://bitcoin.org/',
   ),
 } as const)
 
