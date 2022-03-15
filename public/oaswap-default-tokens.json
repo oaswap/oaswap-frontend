@@ -65,6 +65,14 @@
       "chainId": 42262,
       "decimals": 6,
       "logoURI": "https://oaswap.finance/images/tokens/0x4F43717B20ae319Aa50BC5B2349B93af5f7Ac823.png"
+    },
+    {
+      "name": "Wrapped BTC (Wormhole)",
+      "symbol": "WBTC",
+      "address": "0xd43ce0aa2a29DCb75bDb83085703dc589DE6C7eb",
+      "chainId": 42262,
+      "decimals": 8,
+      "logoURI": "https://oaswap.finance/images/tokens/0xd43ce0aa2a29DCb75bDb83085703dc589DE6C7eb.png"
     }
   ]
 }
